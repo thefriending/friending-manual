@@ -4,4 +4,4 @@ compile_pdf:
     - cd src/ && latexmk -pdf manual.tex
   artifacts:
     paths:
-      - manual.pdf
+      - src/manual.pdf
