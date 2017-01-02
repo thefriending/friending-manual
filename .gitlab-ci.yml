@@ -1,5 +1,5 @@
 compile_pdf:
-  image: tianon/latex
+  image: aergus/latex
   script:
     - latexmk -pdf src/manual.tex
   artifacts:
