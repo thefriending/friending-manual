@@ -1,0 +1,7 @@
+compile_pdf:
+  image: tianon/latex
+  script:
+    - latexmk -pdf src/manual.tex
+  artifacts:
+    paths:
+      - friending-manual.pdf
