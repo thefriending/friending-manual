@@ -1,0 +1,1 @@
+dir | rename-item -newname { $_.name -ireplace '([0-9\.\s]+)\-\s(.+)$','$2' }
