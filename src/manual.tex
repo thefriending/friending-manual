@@ -32,19 +32,37 @@
 %%%%
 %%%%
 
-\newcommand\setDefaultMenu{\renewmenucolortheme{gray}{RGB}{70,127,215}{255,255,255}{255,255,255}}
+\newcommand\setDefaultMenuColor{\renewmenucolortheme{gray}{RGB}{70,127,215}{255,255,255}{255,255,255}}
+\newcommand\setNavigationMenuColor{\renewmenucolortheme{gray}{RGB}{230,230,230}{120,144,156}{98,106,110}}
 \renewmenumacro{\keys}{angularkeys}
-\setDefaultMenu
+\setDefaultMenuColor
 
 %%%%
 %%%%
 %%%%
 
-\newcommand{\Friending}{\textsf{Friending}}
-\newcommand{\Screenshot}[1]{\textit{#1} page}
-\newcommand{\txtinput}[1]{\textsc{#1}}
-\newcommand{\txtexternal}[1]{\textsf{#1}}
-\newcommand{\action}[1]{\texttt{#1}}
+\newcommand{\textapp}[1]{{\fontfamily{cmss}\selectfont#1}}
+\newcommand{\textuser}[1]{{\fontfamily{crm}\selectfont\textit{#1}}}
+\newcommand{\textvar}[1]{{\textsc{#1}}}
+\newcommand{\textcomp}[1]{{\fontfamily{pnc}\selectfont#1}}
+\newcommand{\textui}[1]{{\fontfamily{pag}\selectfont#1}}
+\newcommand{\textaction}[1]{{\fontfamily{cmtt}\selectfont#1}}
+\newcommand{\textmath}[1]{{\fontfamily{zplm}\selectfont#1}}
+
+%%%%
+%%%%
+%%%%
+
+\newcommand{\Friending}{\textapp{Friending}}
+\newcommand{\Screenshot}[1]{\textui{#1}}
+\newcommand{\action}[1]{\textaction{#1}}
+\newcommand{\abbrevation}[1]{\texttt{#1}}
+\newcommand{\gterm}[2]{\item #1 - #2}
+
+%%%%
+%%%%
+%%%%
+
 \newcommand\appSignUp{Sign Up}
 %%%%
 %%%%
@@ -54,7 +72,7 @@
 %% name of screenshot, caption, label
 \newcommand{\appscreenshot}[3]{
 	\begin{figure}[h!]%	
-	\includegraphics[height=7.82 cm, width=4.4 cm]{{"../assets/screenshots/#1"}.png}%
+	\includegraphics[width=4.4cm]{{"../assets/screenshots/#1"}.png}%
 	\centering%
 	\caption{#2}%
 	\label{#3}%
@@ -82,7 +100,7 @@
 	\vfill
 	{\large\textbf{Abstract}\par}
 	\begin{paragraph} 
-	\Friending is an online dating, friendship, and social networking website that features member-created quizzes and multiple-choice questions.  The application is available for review at \url{https://gitlab.com/jrbeverly-friending/friending}. 
+	\Friending is an online dating, friendship, and social networking website that features member-created quizzes and multiple-choice questions.  The application is available for review at \href{https://jrbeverly-friending.gitlab.io/friending/}{Friending}. 
 	\end{paragraph}
 	\\\vspace{0.5cm}
 	{\large \today\par}
@@ -103,44 +121,146 @@
 \section{Introduction}
 
 \subsection{Product overview}
+\Friending{} is an online dating, friendship, and social networking mobile application that features user-created questionnaires and multiple choice questions.  \Friending{} has two primary features: joining groups to find people similar to you or registering for events happening in your local area.
+
+You can create a group around one of your interests, then define questionnaires that can be used to match other members of the group.  You can join these groups and fill in questionnaires to be matched with members of the group.  The questionnaire answers are used to determine a mutual match based on the your and others responses.  You will receive a notification if a mutual match is found.
+
+Events are managed by an event host that controls the event.  Each event has a questionnaire that you will fill out to join.  You can invite people to join your event, and when you are ready start the processing of pairing up people in the event.    The participants of your party will then be matched into pairs.  You will receive a notification when a match is set.
 
 \subsection{Home Pages}
 
+When opening \Friending{} for the first time you will be presented with \Screenshot{Start} (Figure~\ref{fig:start}).   If you have already signed in before then you will be taken to \Screenshot{Sign In} (Figure~\ref{fig:signin}):
+
 \appscreenshot{Start}{Start}{fig:start}
+
+\Screenshot{Start} is the opening page for \Friending{}. It allows you to learn more about \Friending{} through a carousel.  Simply \action{tap} on the \keys{Start the tour} button, and you will be taken to \Screenshot{Onboarding} (Figure~\ref{fig:onboarding}).
+
 \appscreenshot{Onboarding}{Onboarding}{fig:onboarding}
+
+You can \action{Swipe Left} or \action{Swipe Right} to move through the descriptions to learn more about \Friending.  When you are ready to begin, \action{Tap} on the \keys{Continue} button.  You will be taken to \Screenshot{Sign Up} (Figure~\ref{fig:signup}).
+
+When you have successfully created your account or logged in, you will be presented with the \Screenshot{Home} (Figure~\ref{fig:home}):
+
+\appscreenshot{Homepage}{Home}{fig:home}
+
+When you are in the application you can use the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}) to quickly navigate throughout the application.  \action{Tap} on the \appbutton{menu} button to open the \Screenshot{Navigation Menu}.   The \Screenshot{Navigation Menu} is accessible on top level pages such as but not limited to: \Screenshot{Home} (Figure~\ref{fig:home}), \Screenshot{Groups} (Figure~\ref{fig:home}) and \Screenshot{My Questionnaires} (Figure~\ref{fig:home}).
+
 \appscreenshot{Navigation Menu}{Navigation Menu}{fig:navigation}
-\appscreenshot{Homepage}{Home Page}{fig:homepage}
 
 \clearpage
 \section{Conventions}
+\label{sec:conventions}
 
 \subsection{User assumptions}
+\label{sec:assumptions}
+You, the user of \Friending{}, are assumed to know the basics of touch-enabled applications.  If not, please refer to a user’s manual of your mobile device.  \Friending{} is only accessible through an internet-enabled mobile device.
 
 \subsection{Use Cases}
+\label{sec:usecases}
+A use case is.  All the manipulations in a use case are based on the assumption that \Friending{} is running, and you are signed in to your account unless otherwise specified.  For Sections ~\ref{sec:signup} and ~\ref{sec:signin}, you are assumed to not be signed in.  
 
 \subsection{Notational conventions}
+\label{sec:notational}
+The text conventions below are used in this manual:
+
+\begin{itemize}
+\item \textapp{Computer Modern Sans Serif} is used for program names and file names.
+\item Computer Modern Roman is used for normal text.
+\item \textuser{Times New Roman Italics} is used for key users of the software.
+\item \textmath{Palatino} is used for mathematical formulas.
+\item \textvar{Palatino Small Capitals} is used for key name variables 
+\item \textcomp{Avant Garde} is used for key components of the software.
+\item \textui{Avant Garde Bold} is used for user interface components of the software.
+\item \textaction{Computer Modern Typewriter} is used for physical actions taken by the user when interacting with the user interface of the software.
+\end{itemize}
 
 \subsection{Visual conventions}
+\label{sec:visual}
+The images below are used throughout the manual:
+
+\begin{itemize}
+\item \appbutton{editting} is used to indicate a field that can be toggled for editing.
+\item \appbutton{calendar} is used to indicate a field that is editable and uses a calendar widget.
+\item \appbutton{menu} is used to indicate a pull out menu.
+\item is used to indicate the pages of a carousel menu.
+\item \setDefaultMenuColor \keys{Sample}  is used to denote buttons of the user interface.
+\item \setNavigationMenuColor \keys{Sample} is used to denote menu buttons of the user interface.
+\end{itemize}
+\setDefaultMenuColor
 
 \subsection{Glossary of terms}
+\label{sec:glossary}
+The terms below are used through the manual:
+
+\begin{itemize}
+\gterm{\Friending{}}{The name of the application.}
+\gterm{User}{The person who uses \Friending{}, addressed by “you”.}
+\gterm{Member}{A user who joins a group.}
+\gterm{Participant}{A user who fills out a response to a questionnaire.}
+
+\gterm{Internet-Enabled Mobile Device}{A small computing device capable of accessible the internet.}
+\gterm{One Time Password}{A password that is valid for a single sign on.}
+\gterm{Approachable}{The trait of being approachable.}
+
+\gterm{Fee}{A charge for \Friending{} services.}
+\gterm{Billed}{A statement of money owed for \Friending{} services.}
+
+\gterm{Profile}{The outline of "you", the user.}
+\gterm{Event}{A one time event where multiple participants fill out questionnaires to receive matches with other participants in the event}
+\gterm{Event Host}{A participant who initiates a event}
+\gterm{Group}{A collection of members and questionnaires administered by a Group Administrator.}
+\gterm{Group Administrator}{The administrator for a group that has questionnaires and members.}
+\gterm{Questionnaire}{A set of questions to be answered by the participant.}
+\gterm{Notification}{An email sent to a user.}
+
+\gterm{Match}{A pairing of exactly two participants.}
+\gterm{Mutual Match}{A match between two participants who have a compatibility score equal to or above the minimum match threshold.} 
+\gterm{Minimum Match Threshold}{A percentage point at which the compatibility score between two participants is sufficient for a mutual match.}
+\gterm{Compatibility Score}{The percentage compatibility between two participants.}
+\gterm{Comparison Score}{The numeric value representing the similarity between two values.}
+\gterm{Balanced Comparison Score}{A numeric value equalling $85\%$ of the best possible comparison score for a questionnaire.}
+\gterm{Question Match Criteria}{The criteria determining the comparison score between two question answers.}
+
+\gterm{Query}{A request for information from \Friending{}.}
+
+\gterm{Number Pad}{A grid of numbers used for inputting numeric values.}
+
+\gterm{Heterosexual}{Is romantic attraction, sexual attraction or sexual behavior between persons of the opposite sex or gender.}
+\gterm{Bisexual}{Is romantic love or sexual attraction toward both males and females}
+\gterm{Gay}{A male homosexual a male who experiences romantic love or sexual attraction to other males.}
+\gterm{Lesbian}{A female homosexual a female who experiences romantic love or sexual attraction to other females.}
+\end{itemize}
 
 \subsection{Abbreviations}
+\label{sec:abbreviations}
+\begin{itemize}
+\item G\&SD - Gender and Sexual Diversities
+\item GUI - Graphic User Interface
+\item SMS - Short Messaging Service
+\end{itemize}
 
 \subsection{Basic User interface and user interactions goals}
+\label{sec:goals}
 
 \subsection{Organization of this manual}
+\label{sec:organization}
+The remainder of this manual is organized based on use cases.  All Sections assume that you are already logged into \Friending{} with the exception of Sections ~\ref{sec:signup} and ~\ref{sec:signin}. This manual also contains troubleshooting in Section ~\ref{sec:troubleshootandtips} and  gives the limitations of the current version of \Friending{} in Section ~\ref{sec:limitations}.
 
 \clearpage
 \section{Account}
+\label{sec:account}
+
 \subsection{Signing up for your account}
-\setDefaultMenu
-To start using \Friending, create an account by opening the mobile application, \Friending. You will be presented with the \Screenshot{Start} as shown in Figure~\ref{fig:start}. \action{Tap} on the \keys{Start the tour} button.
+\label{sec:signup}
+To start using \Friending, create an account by opening the mobile application, \Friending. You will be presented with \Screenshot{Start} as shown in Figure~\ref{fig:start}. \action{Tap} on the \keys{Start the tour} button.
 
 \appscreenshot{Sign Up}{\appSignUp}{fig:signup}
 
-Then, on the \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your \txtinput{email}, \txtinput{name} and \txtinput{password}.  You should review the \txtexternal{Terms of Service} and \txtexternal{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
+Then, on \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email}, \textvar{name} and \textvar{password}.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
 
 \subsection{Signing in to your account}
+\label{sec:signin}
+
 \appscreenshot{Sign In}{Sign In}{fig:signin}
 \subsection{Viewing your settings}
 \appscreenshot{Settings}{Settings}{fig:settings}
@@ -201,6 +321,19 @@ Then, on the \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} y
 \subsection{Starting an event}
 
 \clearpage
+\section{Group}
+
+\subsection{Creatign your group}
+
+\subsection{Viewing your group}
+
+\subsection{Updating your group}
+
+\subsection{Viewing your group questionnaires}
+
+\subsection{Updating your group questionnaires}
+
+\clearpage
 \section{Questionnaires}
 
 \subsection{Filling out a questionnaire}
@@ -217,9 +350,8 @@ Then, on the \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} y
 
 \subsection{Viewing your match notifications}
 
-
 \clearpage
-\section{Building Questionnaires}
+\section{Questionnaire Designs}
 
 \subsection{Creating a questionnaire}
 
@@ -230,20 +362,8 @@ Then, on the \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} y
 \subsection{Starting matching for events}
 
 \clearpage
-\section{Group}
-
-\subsection{Creatign your group}
-
-\subsection{Viewing your group}
-
-\subsection{Updating your group}
-
-\subsection{Viewing your group questionnaires}
-
-\subsection{Updating your group questionnaires}
-
-\clearpage
-\section{Designing Questionnaires}
+\section{Questionnaire Questions}
+\label{sec:qquestions}
 
 \subsection{Designing a questionnaire}
 
@@ -253,34 +373,86 @@ Then, on the \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} y
 
 \subsection{Adding questions to a questionnaire}
 
+
 \clearpage
 \section{Questions}
+\label{sec:questions}
 
-\subsection{Setting question importance}
+\subsection{Question importance}
+\label{sec:qimportance}
 
-\subsection{Setting a question category}
+\subsection{Question category}
+\label{sec:qcategory}
 
-\subsection{Setting question responses}
+\subsection{Question responses}
+\label{sec:qresponses}
 
-\subsection{Orderign template questions}
+\subsection{Ordering questions}
+\label{sec:qordering}
 
-\subsection{Defining question match criteria}
+\subsection{Question match criteria}
+\label{sec:matchcriterua}
 
 \clearpage
 \section{Mutual Match}
+\label{sec:matching}
 
 \subsection{Group Matching}
+\label{sec:groupmatch}
+\Friending{} makes use a standard solution to the Stable Marriage Problem.
 
 \subsection{Event Matching}
+\label{sec:eventmatch}
+\Friending{} makes use a standard solution to the Stable Roommate Problem.
 
+Events are ...
 
-\section{Troubleshooting \& Tips}
+Mixers are ..
 
 \clearpage
-\section{Troubleshooting}
+\section{Troubleshooting \& Tips}
+\label{sec:troubleshootandtips}
 
+\subsection{Troubleshooting}
+\label{sec:troubleshoot}
+If you encounter difficulty while using \Friending{}, you should attempt each of the following steps until the problem is solved.
+
+\begin{itemize}
+\item Restart \Friending{}
+\begin{enumerate}
+\item \action{Close} the application
+\item Wait a short period  after closing
+\item \action{Open} \Friending{}
+\end{enumerate}
+\item Sign out then Sign In
+\begin{enumerate}
+\setNavigationMenuColor
+\item \action{Tap} on the \appbutton{menu} button in the top left.
+\item \action{Tap} on the \keys{Sign Out} button.
+\item You will now be directed to \Screenshot{Sign In}
+\item Follow Section ~\ref{sec:eventmatch} and sign in to \Friending{}
+\setDefaultMenuColor
+\end{enumerate}
+\end{itemize}
 \subsection{Tips}
+\label{sec:tips}
+\begin{enumerate}
+\item Create a questionnaire before creating an event.
+\item Group similar types of questions into categories.
+\item Prototype a questionnaire by creating an event before publishing.
+\end{enumerate}
 
 \clearpage
 \section{Limitations}
+\label{sec:limitations}
+
+\Friending{} has limitations with respect to \abbrevation{G\&SD}.  Section ~\ref{sec:eventmatch} specifies the creation of events, specifically mixers, that ensure a match for all participants upon completion.  A mixer currently supports Heterosexual, Bisexual, Gay, and Lesbian matches.  With limited match support, the current version of \Friending{} does not support all \abbrevation{G\&SD}.  A future version may support matches providing more inclusivity for \abbrevation{G\&SD} individuals.
+
+The following are limitations of \Friending{}:
+\begin{enumerate}
+\item You can only invite to an event by email address
+\item You can only invite to a group by email address
+\end{enumerate}
+
+
 \end{document}
