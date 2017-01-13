@@ -14,19 +14,16 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{enumitem}
-%\setlist{leftmargin=*}
+
 \usepackage{listings}
 \lstset{basicstyle=\ttfamily,frame=single,xleftmargin=3em,xrightmargin=3em}
 \usepackage[os=win]{menukeys}
-%\renewmenumacro{\keys}[+]{shadowedroundedkeys}
 \usepackage{framed}
 \usepackage{etoolbox}
 \AtBeginEnvironment{leftbar}{\sffamily\small}
 
 \usetikzlibrary{chains,arrows,shapes,positioning}
 \usepackage{hyperref}
-
-\newcommand\AutoCalc{\textsf{AutoratingCalculator}}
 
 %%%%
 %%%%
@@ -63,6 +60,11 @@
 %%%%
 %%%%
 
+
+%%%%
+%%%%
+%%%%
+
 \newcommand\appSignUp{Sign Up}
 %%%%
 %%%%
@@ -83,6 +85,8 @@
 \newcommand{\appbutton}[1]{
 	\includegraphics[height=1em]{{"../assets/buttons/#1"}.png}%
 }
+
+\newcommand{\quicknav}{\Screenshot{Navigation Menu} (Figure~\ref{fig:navigation})}
 
 %%%%
 %%%% 
@@ -141,11 +145,13 @@ You can \action{Swipe Left} or \action{Swipe Right} to move through the descript
 
 When you have successfully created your account or logged in, you will be presented with the \Screenshot{Home} (Figure~\ref{fig:home}):
 
-\appscreenshot{Homepage}{Home}{fig:home}
+\appscreenshot{HomePage (none)}{The first run home page}{fig:homestart}
 
 When you are in the application you can use the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}) to quickly navigate throughout the application.  \action{Tap} on the \appbutton{menu} button to open the \Screenshot{Navigation Menu}.   The \Screenshot{Navigation Menu} is accessible on top level pages such as but not limited to: \Screenshot{Home} (Figure~\ref{fig:home}), \Screenshot{Groups} (Figure~\ref{fig:home}) and \Screenshot{My Questionnaires} (Figure~\ref{fig:home}).
 
 \appscreenshot{Navigation Menu}{Navigation Menu}{fig:navigation}
+
+\appscreenshot{Homepage}{Home}{fig:home}
 
 \clearpage
 \section{Conventions}
@@ -241,6 +247,16 @@ The terms below are used through the manual:
 
 \subsection{Basic User interface and user interactions goals}
 \label{sec:goals}
+\Friending{} is inspired by mail-in oriented dating services that appeared in the early stages of "online" dating.  These computer dating services operate by having you fill out a paper questionnaire which will be mailed in with a nominal fee.  The questionnaires are geared towards people seeking a date.  
+
+\Friending{} makes use of the internet, removing the slow and sometimes unreliable mail service.  You can fill out, submit and view your responses to questions faster than using postal mail.  Additionally \Friending{} includes more communal oriented features than the early concepts, such as enabling you to host your own events with questionnaires.
+
+The basic goals with the user interface of \Friending{} is the following:
+\begin{itemize}
+\item Designing a template should be approachable due to simplified rating systems. 
+\item Each view should have an obvious feature and method of navigation.
+\item There is no need to require a time commitment; \Friending{} works in the background.
+\end{itemize}
 
 \subsection{Organization of this manual}
 \label{sec:organization}
@@ -254,49 +270,91 @@ The remainder of this manual is organized based on use cases.  All Sections assu
 \label{sec:signup}
 To start using \Friending, create an account by opening the mobile application, \Friending. You will be presented with \Screenshot{Start} as shown in Figure~\ref{fig:start}. \action{Tap} on the \keys{Start the tour} button.
 
-\appscreenshot{Sign Up}{\appSignUp}{fig:signup}
+\appscreenshot{Sign Up}{Sign Up}{fig:signup}
 
-Then, on \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email}, \textvar{name} and \textvar{password}.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
+Then, on \Screenshot{Sign Up} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email}, \textvar{name} and \textvar{password}.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
 
 \subsection{Signing in to your account}
 \label{sec:signin}
+On \Screenshot{Start} (Figure~\ref{fig:signin}), tap the \keys{Sign In} button to start the sign in process.
 
 \appscreenshot{Sign In}{Sign In}{fig:signin}
+
+On \Screenshot{Sign In} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email} and \textvar{password}.  Then, \action{tap} on the \keys{Sign In} button.  If you have forgotten your password, see section ~\ref{sec:reset}. 
 \subsection{Viewing your settings}
+\label{sec:settings}
+To view your settings, \action{tap} on the \keys{Settings} button in the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}). Once on \Screenshot{Settings} (Figure~\ref{fig:settings}), you will be able to review your settings. 
+
 \appscreenshot{Settings}{Settings}{fig:settings}
 \subsection{Updating your account details}
-\appscreenshot{Profile}{Profile}{fig:profile}
+\label{sec:accountupdate}
+To update your account details, \action{tap} on the \keys{Settings} button in the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}).  \action{Tap} on the \keys{Account} button as shown in (Figure~\ref{fig:navigation}).
+
+Once on the Settings (Figure 3.4), \action{enter} your changes to \textvar{email}, \textvar{phone number} and \textvar{password} fields. After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.
+
 \subsection{Resetting your password}
-\appscreenshot{Reset}{Reset}{fig:reset}
+\label{sec:reset}
+To reset your password, \action{tap} the \keys{Sign In} button on \Screenshot{Start} (Figure~\ref{fig:start}).
+
+Then, \action{enter} your \textvar{email address} in the \textcomp{Email Address} field as in ~\ref{fig:reset}. Then tap on the \keys{Reset} link. An email will be sent your email address with a one-time password.  This password will allow you to sign in to your account, but will not change your password. The one-time-password has an expiration period of one (1) hour, when it expires, it will no longer allow access to your account.
+
+You are encouraged to change your password after signing in with the one-time password.
+
+\appscreenshot{Reset}{Reset your password}{fig:reset}
 \subsection{Deleting your account}
 \appscreenshot{Delete Account}{Delete account}{fig:accountdelete}
+To delete your account, \action{tap} on the \keys{Settings} button on the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}).
+
+Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on the \keys{Delete Account} button.  You must agree to the deletion of your account in the \Screenshot{Confirmation Popup} (Figure~\ref{fig:accountdelete}). Your account will be deactivated and you will not receive any further matches or notifications during this period.  An email will be sent to notify you of your account deactivation and impending deletion.  Within 14 days your account will be permanently deleted along with all associated information.  If you sign in to your account within 14 days, your deletion request will be cancelled.  There is no way to recover a deleted account.
 
 \clearpage
 \section{Billing}
 
 \subsection{Viewing your billing information}
+\label{sec:viewbilling}
 \appscreenshot{Billing}{Billing}{fig:billing}
+To view your account billing information, \action{tap} on the \keys{Settings} button on the \quicknav.
+Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on \keys{Billing} button, you will be presented with your current billing information (Figure~\ref{fig:billing}).   To download a copy of an invoice, \action{tap} on the \appbutton{invoice} button.  This will download a copy of an invoice to your device.  If any billing information is incorrect, see Section ~\ref{sec:troubleshoot} on troubleshooting.
 
 \subsection{Update your billing information}
-\appscreenshot{Credit Information}{Credit Information}{fig:creditinfo}
+\appscreenshot{Credit Information}{Credit Information}{fig:credit}
+To update account billing information, \action{tap} on the \keys{Settings} button on the \quicknav.  Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on the \keys{Billing} button, you will be presented with your current billing information (Figure~\ref{fig:billing}). 
+ 
+Then, while on \Screenshot{Billing} (Figure~\ref{fig:billing}), \action{tap} on the \appbutton{creditcard} button, you will be presented with your current credit card (Figure~\ref{fig:credit}).  \action{Enter} your changes to \textvar{First Name}, \textvar{Last Name}, \textvar{Card Number}, \textvar{Zip Code} and \textvar{Expiration Date} fields.  After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  
+
+You will be emailed a confirmation that your billing information has been changed.  
 
 \subsection{Downloading your invoices}
 \appscreenshot{Billing Notifcation Pop}{Billing Notifcation}{fig:billingnotify}
 
 \subsection{Paying for your account services}
+Paying for your account happens automatically.   You will need to set your billing information to use \Friending{}.   If \Friending{} is unable to bill your account, you will be unable to use \Friending{} until your billing information is corrected.  You will be billed on a monthly basis for your account.
 
-\subsection{Paid account services}
+You can see your billing information as specified in section ~\ref{sec:viewbilling}.
 
 \clearpage
 \section{Profile}
 
 \subsection{Updating your profile}
+\appscreenshot{Profile}{Profile}{fig:profile}
+To update your personal profile information, \action{tap} on the \keys{Profile} button on the \quicknav. Then, while \Screenshot{Profile} (Figure~\ref{fig:profile}), \action{enter} your changes to \textvar{name}, \textvar{birthday}, \textvar{gender}, \textvar{orientation} and \textvar{description} fields.  You can tap on the \textcomp{Profile Image} to set your profile picture.  After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  
+\\\\
+The \textcomp{gender} field is limited to a binary choice of male and female.  The \textcomp{orientation} field is limited to Heterosexual, Bisexual, Homosexual.  See section ~\ref{sec:limitations} on the limitations of \Friending{} with respect to G\&SD.
 
 \subsection{Setting your notification preferences}
+\appscreenshot{Preferences}{Billing Notifcation}{fig:preferences}
+To view your notification preferences, \action{tap} on the \keys{Settings} button in the \quicknav. Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}),  \action{tap} on the \keys{Notifications} button, you will be presented with your notification settings.  On \Screenshot{Preferences} (Figure~\ref{fig:preferences}) you can see the types of notifications that \Friending{} will send. To toggle email notifications for a notification type, \action{tap} on the check box.  If email notifications is enabled, the email icon will appear filled.  If email notifications is disabled, the email icon will appear empty. After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  Email notifications cannot be disabled for billing statements and account notifications.
 
 \clearpage
 \section{Groups}
-
+\appscreenshot{Fill}{Billing Notifcation}{fig:fill}
+\appscreenshot{Filling}{Billing Notifcation}{fig:filling}
+\appscreenshot{Group Edit}{Billing Notifcation}{fig:groupedit}
+\appscreenshot{Group Join}{Billing Notifcation}{fig:groupjoin}
+\appscreenshot{Group}{Billing Notifcation}{fig:group}
+\appscreenshot{Groups}{Billing Notifcation}{fig:groups}
+\appscreenshot{Answer}{Billing Notifcation}{fig:answer}
+\appscreenshot{Answers}{Billing Notifcation}{fig:answers}
 \subsection{Viewing groups}
 
 \subsection{Searching groups}
@@ -309,6 +367,13 @@ Then, on \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your 
 
 \clearpage
 \section{Events}
+\appscreenshot{Event Edit}{Billing Notifcation}{fig:eventedit}
+\appscreenshot{Event Fill}{Billing Notifcation}{fig:eventfill}
+\appscreenshot{Event Filled In}{Billing Notifcation}{fig:eventfilled}
+\appscreenshot{Event Filling}{Billing Notifcation}{fig:eventfilling}
+\appscreenshot{Event Joined}{Billing Notifcation}{fig:eventjoined}
+\appscreenshot{Event}{Billing Notifcation}{fig:event}
+\appscreenshot{Events}{Billing Notifcation}{fig:events}
 
 \subsection{Joining an event}
 
@@ -335,7 +400,14 @@ Then, on \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your 
 
 \clearpage
 \section{Questionnaires}
-
+\appscreenshot{Question Matching 1}{Billing Notifcation}{fig:questionmatch1}
+\appscreenshot{Question Matching 2}{Billing Notifcation}{fig:questionmatch2}
+\appscreenshot{Question-Editing}{Billing Notifcation}{fig:questionedit}
+\appscreenshot{Questionnaire-Details}{Billing Notifcation}{fig:questiondetails}
+\appscreenshot{Questionnaire-Questions}{Billing Notifcation}{fig:questions}
+\appscreenshot{Questionnaires}{Billing Notifcation}{fig:questionnaires}
+\appscreenshot{Question-Weighting}{Billing Notifcation}{fig:weighting}
+\appscreenshot{Categories}{Billing Notifcation}{fig:categories}
 \subsection{Filling out a questionnaire}
 
 \subsection{Flagging important questions}
@@ -349,6 +421,8 @@ Then, on \Screenshot{\appSignUp} (Figure~\ref{fig:signup}), \action{enter} your 
 \subsection{Removing your submitted questionnaire}
 
 \subsection{Viewing your match notifications}
+\appscreenshot{Match}{Billing Notifcation}{fig:match}
+\appscreenshot{Notifications}{Billing Notifcation}{fig:notifications}
 
 \clearpage
 \section{Questionnaire Designs}
@@ -442,6 +516,8 @@ If you encounter difficulty while using \Friending{}, you should attempt each of
 \item Prototype a questionnaire by creating an event before publishing.
 \end{enumerate}
 
+If billing information on your account is incorrect, then you can contact \textbf{{billing@friending.no}}.
+
 \clearpage
 \section{Limitations}
 \label{sec:limitations}
@@ -453,6 +529,7 @@ The following are limitations of \Friending{}:
 \item You can only invite to an event by email address
 \item You can only invite to a group by email address
 \end{enumerate}
+
 
 
 \end{document}
