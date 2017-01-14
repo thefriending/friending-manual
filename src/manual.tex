@@ -2,14 +2,11 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} % LY1 also works
-
-%% Font settings suggested by fbb documentation.
 \usepackage{textcomp} % to get the right copyright, etc.
 \usepackage[lining,tabular]{fbb} % so math uses tabular lining figures
 \usepackage[scaled=.95,type1]{cabin} % sans serif in style of Gill Sans
 \usepackage[varqu,varl]{zi4}% inconsolata typewriter
 \useosf % change normal text to use proportional oldstyle figures
-%\usetosf would provide tabular oldstyle figures in text
 
 \usepackage{microtype}
 \usepackage{graphicx}
@@ -23,7 +20,7 @@
 \AtBeginEnvironment{leftbar}{\sffamily\small}
 
 \usetikzlibrary{chains,arrows,shapes,positioning}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 %%%%
 %%%%
@@ -129,7 +126,7 @@
 
 You can create a group around one of your interests, then define questionnaires that can be used to match other members of the group.  You can join these groups and fill in questionnaires to be matched with members of the group.  The questionnaire answers are used to determine a mutual match based on the your and others responses.  You will receive a notification if a mutual match is found.
 
-Events are managed by an event host that controls the event.  Each event has a questionnaire that you will fill out to join.  You can invite people to join your event, and when you are ready start the processing of pairing up people in the event.    The participants of your party will then be matched into pairs.  You will receive a notification when a match is set.
+Events are managed by an event host that controls the event.  Each event has a questionnaire that you will fill out to join.  You can invite people to join your event, and when you are ready start the processing of pairing up people in the event.    The participants of your event will then be matched into pairs.  You will receive a notification when a match is set.
 
 \subsection{Home Pages}
 
@@ -347,6 +344,7 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 
 \clearpage
 \section{Groups}
+\label{sec:groups}
 \appscreenshot{Fill}{Billing Notifcation}{fig:fill}
 \appscreenshot{Filling}{Billing Notifcation}{fig:filling}
 \appscreenshot{Group Edit}{Billing Notifcation}{fig:groupedit}
@@ -356,17 +354,28 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 \appscreenshot{Answer}{Billing Notifcation}{fig:answer}
 \appscreenshot{Answers}{Billing Notifcation}{fig:answers}
 \subsection{Viewing groups}
+\label{sec:group-view}
 
 \subsection{Searching groups}
+\label{sec:group-search}
 
 \subsection{Joining a group}
+\label{sec:group-join}
+To join a group, \action{tap} on the \keys{Group} button on the \quicknav.  Then, while on the \Screenshot{Groups} (Figure~\ref{fig:groups}), \action{enter} a \textvar{search query} into the search bar, you will be presented with groups matching your query.  Select the \textcomp{group} that matches your query to view \Screenshot{Group Details} (Figure~\ref{fig:group}).
+
+Then, while on the \Screenshot{Group Details} page, \action{tap} on the \keys{Join} button.  The group will be added to your \Screenshot{Home Page} (Figure~\ref{fig:home}).   
 
 \subsection{Viewing a group}
+\label{sec:group-view}
+To view a group, \action{tap} on the \textcomp{group} that you wish to view on the \Screenshot{Home Page} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:group}). Then, while on the \Screenshot{Group Details}, \action{tap} on the \keys{View} button.  You will be presented with your \Screenshot{Group Home} (Figure~\ref{fig:home}).
 
 \subsection{Leaving a group}
+\label{sec:group-leave}
+To leave a group, \action{tap} on the community that you wish to leave on \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:group}).  Then, while on \Screenshot{Group Details}, \action{tap} on the \keys{Leave} button.  The group will be removed from your \Screenshot{Home} (Figure~\ref{fig:home}).  If you wish to re-join the group, see section \ref{sec:group-join}.
 
 \clearpage
 \section{Events}
+\label{sec:events}
 \appscreenshot{Event Edit}{Billing Notifcation}{fig:eventedit}
 \appscreenshot{Event Fill}{Billing Notifcation}{fig:eventfill}
 \appscreenshot{Event Filled In}{Billing Notifcation}{fig:eventfilled}
@@ -376,30 +385,41 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 \appscreenshot{Events}{Billing Notifcation}{fig:events}
 
 \subsection{Joining an event}
+\label{sec:event-join}
 
 \subsection{Waiting to join an event}
+\label{sec:event-wait}
 
 \subsection{Event Join Requirements}
+\label{sec:event-req}
 
 \subsection{Viewing events}
+\label{sec:event-view}
 
-\subsection{Starting an event}
+\subsection{Starting matching for events}
+\label{sec:event-starting}
 
 \clearpage
 \section{Group}
 
-\subsection{Creatign your group}
+\subsection{Creating your group}
+\label{sec:group-create}
 
-\subsection{Viewing your group}
+%\subsection{Viewing your group}
+%\label{sec:group-view}
 
 \subsection{Updating your group}
+\label{sec:group-update}
 
 \subsection{Viewing your group questionnaires}
+\label{sec:group-questionnaire}
 
 \subsection{Updating your group questionnaires}
+\label{sec:group-questionnaire-edit}
 
 \clearpage
 \section{Questionnaires}
+\label{sec:questionnaires}
 \appscreenshot{Question Matching 1}{Billing Notifcation}{fig:questionmatch1}
 \appscreenshot{Question Matching 2}{Billing Notifcation}{fig:questionmatch2}
 \appscreenshot{Question-Editing}{Billing Notifcation}{fig:questionedit}
@@ -409,18 +429,25 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 \appscreenshot{Question-Weighting}{Billing Notifcation}{fig:weighting}
 \appscreenshot{Categories}{Billing Notifcation}{fig:categories}
 \subsection{Filling out a questionnaire}
+\label{sec:questionnaire-fill}
 
 \subsection{Flagging important questions}
+\label{sec:questionnaire-importance}
 
 \subsection{Deleting a draft questionnaire}
+\label{sec:questionnaire-delete}
 
 \subsection{Viewing your submitted questionnaire}
+\label{sec:submitted-view}
 
 \subsection{Updating your submitted questionnaire}
+\label{sec:submitted-update}
 
 \subsection{Removing your submitted questionnaire}
+\label{sec:submitted-delete}
 
 \subsection{Viewing your match notifications}
+\label{sec:matches}
 \appscreenshot{Match}{Billing Notifcation}{fig:match}
 \appscreenshot{Notifications}{Billing Notifcation}{fig:notifications}
 
@@ -428,12 +455,9 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 \section{Questionnaire Designs}
 
 \subsection{Creating a questionnaire}
+\label{sec:questionnaire-create}
 
 \subsection{Sending invitiations}
-
-\subsection{Opening an event for joining}
-
-\subsection{Starting matching for events}
 
 \clearpage
 \section{Questionnaire Questions}
@@ -529,7 +553,5 @@ The following are limitations of \Friending{}:
 \item You can only invite to an event by email address
 \item You can only invite to a group by email address
 \end{enumerate}
-
-
 
 \end{document}
