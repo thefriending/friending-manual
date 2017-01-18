@@ -148,6 +148,20 @@ When you are in the application you can use the \Screenshot{Navigation Menu} (Fi
 
 \appscreenshot{Navigation Menu}{Navigation Menu}{fig:navigation}
 
+The links will take you to the following locations:
+
+\begin{itemize}
+\item Profile $\rightarrow$ Profile Settings (Figure 7.1).
+\item Preferences $\rightarrow$ Profile Settings (Figure 7.2).
+\item Notifications $\rightarrow$ Notifications (Figure 10.5).
+\item Events $\rightarrow$ Parties (Figure 9.3).
+\item Groups $\rightarrow$ Community Search (Figure 8.1).
+\item Questionnaires $\rightarrow$ Community Templates (Figure 11.4).
+\item Billing $\rightarrow$ Settings (Figure 6.1).
+\item Settings $\rightarrow$ Settings (Figure 5.3).
+\item Sign out $\rightarrow$ Start Page (Figure 1.1).
+\end{itemize}
+
 \appscreenshot{Homepage}{Home}{fig:home}
 
 \clearpage
@@ -386,30 +400,51 @@ To leave a group, \action{tap} on the community that you wish to leave on \Scree
 
 \subsection{Joining an event}
 \label{sec:event-join}
+The only way to join a event is to be invited to a event.  To view your invitations, \action{tap} on the \keys{Notifications} button on the \quicknav. On \Screenshot{Notifications} (Figure~\ref{fig:navigation}) you can view all notifications for your account.  \action{Tap} on a event invitation notification to open the \Screenshot{Event View} (Figure~\ref{fig:eventview}).  
+
+On the \Screenshot{Event View} page you can tap on the \keys{Join} button to join the event. This will mark your intentions to join the event - it does not guarantee that you will successfully join the event. See section ~\ref{sec:event-wait} for more details.   You may not be able to join a event based on your gender or sexual orientation, see section ~\ref{sec:event-req} for more details. You will receive a notification of your intention to join the event, visibile in your \Screenshot{Notifications} (Figure~\ref{fig:navigation}).   When you have successfully joined the event, you will see the event on your \Screenshot{Home} (Figure~\ref{fig:home}), in \Screenshot{Events} (Figure~\ref{fig:events}), and a notification in your \Screenshot{Notifications} (Figure~\ref{fig:notifications}).  
+
+If you no longer wish to join the event, you can cancel your pending request to join by revisiting the \Screenshot{Event View} page.  \action{Tap} the \keys{Pending} button to cancel your pending request (Figure~\ref{fig:eventjoined}).  Once you have successfully joined a event, you cannot leave the event.
 
 \subsection{Waiting to join an event}
 \label{sec:event-wait}
+When trying to join a event, if the event does not have sufficient participants for gender and sexual orientation matches, then you will be placed in a waiting list.  The waiting list is first come first serve.  As a event ensures that individuals will be matched with someone, you will remain in the waiting list until someone requests to join the event that has the potential to match with you. 
+
+An example of this would be a heterosexual event.  This event requires an equal number of male and female participants to ensure that everyone will be matched with someone.  A male user requesting to join would be placed in a waiting list until a female user requests to join the event.  For a homosexual event, the event requires an even number of participants to ensure everyone is matched.  As such, a user requesting to join would be placed in the waiting list until another user requests to join the event.
+
+When the event host start matching for the event, the waiting list will be cancelled and everyone on the list will be denied from joining the event.  If you do not successfully join the event, you will see a notification in your \Screenshot{Notifications}.
 
 \subsection{Event Join Requirements}
 \label{sec:event-req}
+A event is defined with an orientation that defines how participants in a event are matched.  The currently defined orientations are Heterosexual, Bisexual, Gay, and Lesbian.  This means that a event with a Lesbian orientation would only accept you if you are female.  All participants in a event must match with someone in the event, as such the orientation restricts the participants to those that can match within the event.  See section ~\ref{sec:limitations} on the limitations of \Friending{} with respect to G\&SD.
 
 \subsection{Viewing events}
 \label{sec:event-view}
+To view your events, \action{tap} on the \keys{Events} button on the \quicknav. This brings up the Events page (Figure~\ref{fig:event}). On the Events page (Figure~\ref{fig:events}) you can view all events that you have created, are waiting to join or are currently participating in.  \action{Tap} on the event to view the details of a event.  This opens the \Screenshot{Event} page (Figure~\ref{fig:event}).  
 
 \subsection{Starting matching for events}
 \label{sec:event-starting}
+To host a event, \action{tap} on the \keys{Create Party} button on the \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Event Create} (Figure~\ref{fig:eventedit}). 
+
+On the Event Create page you can set the properties of the event.  \action{Enter} your changes to \textvar{Title}, \textvar{Capacity}, \textvar{Orientation}, and \textvar{Description} fields.  The \textcomp{Orientation} field is limited to Heterosexual, Bisexual, Gay, and Lesbian.  To set the questionnaire, see section ~\ref{sec:questionnaire-create}.  After you are satisfied with your changes, \action{tap} on the Create button to create your event.   You can now see your event on your \Screenshot{Home} (Figure~\ref{fig:home}) or on the Events page (Figure~\ref{fig:events}).
 
 \clearpage
 \section{Group}
 
 \subsection{Creating your group}
 \label{sec:group-create}
+You can define your own group to discover yourself and others.  Within each group, you can create questionnaires that your members can fill out.  
+
+To create a group, \action{tap} on the create group button on \Screenshot{Home} (Figure~\ref{fig:home}).  This opens \Screenshot{Group Details} (Figure ~\ref{fig:group}).  You can edit the values as defined in section ~\ref{sec:group-update}.  When you are satisfied with your values, you can save the group, which creates the group.  The group will then be accessible from your \Screenshot{Home} (Figure~\ref{fig:home}) or the \Screenshot{Group Search} (Figure~\ref{fig:home}).
 
 %\subsection{Viewing your group}
 %\label{sec:group-view}
 
 \subsection{Updating your group}
 \label{sec:group-update}
+To edit a group you have created, navigate to \Screenshot{Group Admin} (Figure~\ref{fig:groupedit}) as described in section ~\ref{sec:group-view}.
+
+Then, \action{tap} on the \keys{Manage} button and edit icons will appear next to the \textvar{Name} and \textvar{Description} fields (Figure~\ref{fig:groupedit}). These two fields are now editable. \action{Tap} on the field which you wish to edit and edit the value.  When you are satisfied with your changes, \action{tap} the \keys{Save} button.
 
 \subsection{Viewing your group questionnaires}
 \label{sec:group-questionnaire}
@@ -430,24 +465,47 @@ To leave a group, \action{tap} on the community that you wish to leave on \Scree
 \appscreenshot{Categories}{Billing Notifcation}{fig:categories}
 \subsection{Filling out a questionnaire}
 \label{sec:questionnaire-fill}
+To fill out a questionnaire, tap on the questionnaire on the Group Home page (Figure 3.13). This opens the Questionnaire Overview page (Figure 3.14). 
+
+On the Questionnaire Overview page you can view all questions in the questionnaire.  Each question is marked with a solid   to indicate an answered question or empty heart   if you have not.  All questions must be answered before you can submit.  If you leave the page before finishing the questionnaire, your previous answers will be saved. To answer a question tap on a question.  You can tap any question in the questionnaire, in any order.  After you are satisfied with your answers, tap on the Submit button to submit your questionnaire.  
+
+\Friending{} currently supports three types of questions: true-false, multiple choice, and multiple answer.  Depending on the type of question, you will be presented with one of the three pages:
+
+To fill out a response for any question type, tap on the circle next to the answer of your choice.
+You fill in an answer for yourself and for your ideal match, under You and Them columns respectively.  After you are satisfied with your responses, tap on the Save button to save your responses for this question.
 
 \subsection{Flagging important questions}
 \label{sec:questionnaire-importance}
+To rate the importance of the question shown in Figure 3.15, tap on the star rating  under the label Importance.  The star which you tap will determine the rating out of 3.  The more stars, the higher degree of  importance to you the question is.  This degree of importance will be factored into the matchmaking process.  The default rating is 1 star. 
 
 \subsection{Deleting a draft questionnaire}
 \label{sec:questionnaire-delete}
+You cannot delete a questionnaire that has not been submitted.   You are only able to submit one set of answers for a questionnaire.  You can submit the questionnaire (see section 3.2.3), then delete the submitted questionnaire.
+
+If you delete your account, the draft questionnaire information will be deleted.
 
 \subsection{Viewing your submitted questionnaire}
 \label{sec:submitted-view}
+To view a submitted questionnaire, tap on the questionnaire on the Group Home page (Figure 3.13). This opens the Questionnaire Overview page (Figure 3.14).   On the Submitted Questionnaire Overview page (Figure 3.16) you can view all questions in the questionnaire.  To view a question, tap on a question.  You can tap any question in the questionnaire, in any order.  
 
 \subsection{Updating your submitted questionnaire}
 \label{sec:submitted-update}
+To update a submitted questionnaire, tap on the questionnaire on the Group Home page (Figure 3.13). This opens the Submitted Questionnaire Overview page (Figure 3.16).  On the Questionnaire Overview page you can view all questions in the questionnaire.  To view a question tap on a question.  You can tap any question in the questionnaire, in any order.  
+
+\Friending{} currently supports three types of questions: true-false, multiple choice, and multiple answer (Figure 3.15).  To update a response for any question type, tap on the circle next to the answer of your choice.  You fill in an answer for yourself and for your ideal match, under You and Them columns respectively.   To update the importance of a question, follow the process defined under section 3.2.4.
+
+After you are satisfied with your updates, tap on the Save button to save your updates for this question. 
 
 \subsection{Removing your submitted questionnaire}
 \label{sec:submitted-delete}
+To delete a submitted questionnaire, tap on the questionnaire on the Group Home page (Figure 3.13). On the Submitted Questionnaire Overview page (Figure 3.16) you can view all questions in the questionnaire.  To delete a submitted questionnaire, select the Delete button.  The submitted questionnaire cannot be recovered after deletion.
 
 \subsection{Viewing your match notifications}
 \label{sec:matches}
+To view your match notification, tap on the Notifications button on the Navigation Menu (Figure 1.2). This brings up the Notifications page (Figure 3.17).  On the Notifications page you can view all notifications for your account.  Tap on the match found notification to open the Match Profile View page (Figure 3.18).  
+
+On the Match Profile View page you can then contact the match through email.  At present \Friending{} only supports contacting matches through email.
+
 \appscreenshot{Match}{Billing Notifcation}{fig:match}
 \appscreenshot{Notifications}{Billing Notifcation}{fig:notifications}
 
@@ -456,21 +514,40 @@ To leave a group, \action{tap} on the community that you wish to leave on \Scree
 
 \subsection{Creating a questionnaire}
 \label{sec:questionnaire-create}
+On the Party Create page (Figure 3.22) you set the questionnaire.  Tap the Select Template Field to open the Template Select page (Figure 3.23).  On the Template Select page you can view all templates you have created.  Tap on the template to select the template for your party.  You will be returned to the Party Create page with the template set.
 
 \subsection{Sending invitiations}
+\label{sec:questionnaire-invite}
+To view your events, tap on the Events button on the Navigation Menu (Figure 1.2). This brings up the Events page (Figure 3.21).   On the Events page (Figure 3.21) you can view all events that you have created, are waiting to join or are currently participating in.  Tap on the event to view the details of a event you created.  This opens the Event Administration page (Figure 3.24).   Enter the email address of the user you wish to invite in the Email Address Field.  Tap on the Send button to send the invitation to the user.
 
 \clearpage
 \section{Questionnaire Questions}
 \label{sec:qquestions}
 
 \subsection{Designing a questionnaire}
+\label{sec:dquestions}
+
+This section will describe how you can use the Template Builder (Figure 4.4) to add or modify questions to a template. To open the Template Builder, follow the steps described in section 4.2. 
+
+Near the top of the Template Builder is the top toolbar with three buttons. The categories button    allows you to define categories of the template. The publish button   in the center allows you to publish the template to be visible as a questionnaire in the Community View page (Figure 3.13). The delete button   on the right allows you to delete the template.  Tap on each button will perform its respective action. 
+
+The Template Builder contains the metadata of Name and Mutual Match Threshold. You can tap on the Name and Mutual Match Threshold Fields to update their values.  See section 4.4.1 for more details on the Mutual Match Threshold property.
 
 \subsection{Minimum score for a match}
+\label{sec:minscore}
+As a designer, you can specify the threshold for a mutual match (see section 4.4). The threshold determines the minimum percentage compatibility between two questionnaire submissions that Matchmaker will use to determine a mutual match.  The suggested mutual match threshold for a good and balanced match is $75\%$ or above.
 
 \subsection{Category Weighting}
+\label{sec:categoryweight}
+The set weights for question categories, navigate to the Template Builder page (Figure 4.4) as described in section 4.2.  Tap categories button    to open the Category Weight page (Figure 4.5).  On the Category Weight page you can tap a category to set the numeric value using the number pad.  The weight value is restricted between 0.0 and 2.0.
 
 \subsection{Adding questions to a questionnaire}
+\label{sec:addquestion}
+On the bottom toolbar of the Template Builder (Figure 4.4), there are three buttons that create new questions - with each creating a different type of question. The three types of questions are  true-false  , multiple choice  , and multiple answer  . 
 
+To add any of these types to the template, tap on the associated button.  This opens the Question Builder (Figure 4.6).  You can set the question in Question Field located under the Description header. Tap the text box area to set the text.  You can set the importance (see section 4.5.1),  category (see section 4.5.2), and responses (see section 4.5.3) of the question as well.
+
+Once you are satisfied with your question, tap on the Save button at the bottom to save the question. 
 
 \clearpage
 \section{Questions}
@@ -478,22 +555,44 @@ To leave a group, \action{tap} on the community that you wish to leave on \Scree
 
 \subsection{Question importance}
 \label{sec:qimportance}
+The importance of a question determines how it will be weighed when computing mutual matches.  Three stars means that the question will have higher weighting. Two stars, the default selection, means that the question will have normal weighting. One star means that the question has lower weighting.  To set the importance of the question you tap on the star icons   under the Importance header. 
 
 \subsection{Question category}
 \label{sec:qcategory}
+The category of a question is used to organize the related questions.  The categories can then have a numeric factor applied to them to increase their relevance in the template.  This means that questions are weighted related to their own category.  To set the category of the question, tap on the desired colour icon  .  The select category will have a lined border around its edges  .
 
 \subsection{Question responses}
 \label{sec:qresponses}
+The responses for a question change based on the question type.  The three types of questions are  true-false, multiple choice, and multiple answer.  The true-false question type has two possible responses, intended for binary responses.  The multiple choice question type allows you to select a single answer for a question from a list of provided options. The multiple answer question type allows you to select multiple answers for a single question from a list of provided options. 
+
+The multiple answer and multiple choice question types allows you to add or remove additional responses. Tap the Plus button   under the Response header to add a new response. Tap the remove button  to the left of a response to remove it.
 
 \subsection{Ordering questions}
 \label{sec:qordering}
+You can reorder the questions in a template on the Template Builder page (Figure 4.4). In the questions list, tap down on a question that you need to be moved and drag the question to its intended position. 
 
 \subsection{Question match criteria}
 \label{sec:matchcriterua}
+\Friending{} compares the answers to questions in questionnaires to determine a numerical score to perform matches.  The question match criteria defines how many points are awarded based on the two provided answers.   The You column represents the chosen answer, and the Star Ratings ( ) represent the points award if the comparison answer has chosen this.  
+
+On the Question Builder pages (Figure 4.7) for each of the question types, you can select the Matching Segment ( ) of the segmentation control.   
+
+With the Match Segment enabled, you can set the scoring properties of each matching comparison.  Tap on the checkbox in the You column to see the scoring values of the question.  The Star Ratings ( ) represent the score value if comparison question had that option set.  The values are as such: an empty star is 0, half star is 0.5, and a full star is 1.  The comparison score from comparing two questions is equal to the summation of all score values, divided by the best possible score value for the question.
+
+In Figure 4.7, the multiple-choice question has four options.  Option \#2 is currently selected, which results in the Star Ratings showing the points yielded if the comparison question had selected that answer.  The choice of Option \#2 yields a full star, and half stars (or 0.5 points) are yielded for Option \#3 and \#4.   
 
 \clearpage
 \section{Mutual Match}
 \label{sec:matching}
+\Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
+\begin{equation}
+(comparison score)_Question = COMP(A,B)*CAT(Q)*IMP(A)*IMP(A)*IMP(Q) 
+\end{equation}
+
+Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
+The compatibility score is computed from the comparison score of the questionnaire divided by the balanced comparison score for the questionnaire.  The balanced comparison score is $85\%$ of the best possible comparison score.
+
+A mutual match is defined as a match between two participants who have a compatibility score equal to or above the minimum match threshold.  
 
 \subsection{Group Matching}
 \label{sec:groupmatch}
