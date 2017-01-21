@@ -1,5 +1,5 @@
 compile_pdf:
-  image: aergus/latex
+  image: jrbeverly/latex
   script:
     - cd src/ && latexmk -pdf manual.tex
   artifacts:
