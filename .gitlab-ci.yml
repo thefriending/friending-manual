@@ -1,7 +1,14 @@
 compile_pdf:
   image: jrbeverly/latex
+  stage: build
   script:
     - cd src/ && latexmk -pdf manual.tex
   artifacts:
     paths:
       - src/manual.pdf
+
+deploy_job:
+  stage: deploy
+  script:
+  - curl --request POST --form token=${ARTIFACT_TOKEN} --form ref=master --form "variables[BUILD_ID]=${CI_BUILD_ID}" https://gitlab.example.com/api/v3/projects/${PROJECT_ID}/trigger/builds
+  when: manual
