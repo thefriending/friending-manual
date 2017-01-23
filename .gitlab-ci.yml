@@ -9,5 +9,7 @@ compile_pdf:
 
 trigger_build:
   stage: deploy
+  only: 
+    - master
   script:
-    - "curl -X POST -F token=${ARTIFACT_TOKEN} -F \"variables[BUILD_ID]=${CI_BUILD_ID}\" -F ref=master https://gitlab.com/api/v3/projects/${PROJECT_ID}/trigger/builds"
+    - "curl -X POST -F token=${ARTIFACT_TOKEN} -F ref=master https://gitlab.com/api/v3/projects/${PROJECT_ID}/trigger/builds"
