@@ -7,8 +7,7 @@ compile_pdf:
     paths:
       - src/manual.pdf
 
-deploy_job:
+trigger_build:
   stage: deploy
   script:
-  - curl --request POST --form token=${ARTIFACT_TOKEN} --form ref=master --form "variables[BUILD_ID]=${CI_BUILD_ID}" https://gitlab.example.com/api/v3/projects/${PROJECT_ID}/trigger/builds
-  when: manual
+    - "curl -X POST -F token=${ARTIFACT_TOKEN} -F \"variables[BUILD_ID]=${CI_BUILD_ID}\" -F ref=master https://gitlab.com/api/v3/projects/${PROJECT_ID}/trigger/builds"
