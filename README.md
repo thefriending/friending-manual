@@ -56,4 +56,4 @@ compile_pdf:
 ```
 
 ## Proto io
-Proto.io is a web service to create fully-interactive high-fidelity prototypes that look and work exactly like your app should. No coding required.  Using Proto.io you can quickly design and prototype design ideas.  
+[Proto.io](https://proto.io/) is a web service to create fully-interactive high-fidelity prototypes that look and work exactly like your app should. No coding required.  Using Proto.io you can quickly design and prototype design ideas.  
