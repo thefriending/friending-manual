@@ -10,7 +10,7 @@
 
 <div align="center">
   <a href="/../commits/master"><img alt="Build Status" src="/../badges/master/build.svg"/></a>
-  <a href="/../blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000"/></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000"/></a>
   <a href="https://jrbeverly-friending.gitlab.io/friending"><img alt="Friending" src="https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000"/></a>
   <a href="/../builds/artifacts/master/download?job=compile_pdf"><img alt="Artifacts" src="https://img.shields.io/badge/artifacts-manual.pdf-red.svg?maxAge=2592000"/></a>
 </div>
