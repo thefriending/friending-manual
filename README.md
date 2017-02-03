@@ -1,7 +1,7 @@
 <div align="center">
-  <img alt="friending-manual" src="./icon.png" />
+  <img alt="Friending Manual" src="./icon.png" />
   <br/>
-  <h1>friending-manual</h1>
+  <h1>Friending Manual</h1>
 </div>
 
 <p align="center">
