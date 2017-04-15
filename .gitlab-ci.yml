@@ -1,13 +1,13 @@
 compile_pdf:
-  image: jrbeverly/latex:common
+  image: jrbeverly/latex:full
   stage: build
   only: 
     - master
   script:
-    - cd src/ && latexmk -pdf manual.tex
+    - sh build/build.sh
   artifacts:
     paths:
-      - src/manual.pdf
+      - manual.pdf
 
 trigger_build:
   stage: deploy
