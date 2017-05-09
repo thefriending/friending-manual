@@ -10,4 +10,4 @@ DIR="$(dirname $SCRIPT)"
 # Environment
 docker run --rm -it \
         -v $(dirname $DIR):/media \
-        jrbeverly/latex:full sh build/build.sh
+        jrbeverly/latex:full sh
