@@ -66,7 +66,7 @@
 \newcommand*{\fileSignin}{sign-in}
 \newcommand*{\fileStart}{start}
 \newcommand*{\fileSettings}{settings}
-\newcommand*{\fileReset}{settings}
+\newcommand*{\fileReset}{reset}
 \newcommand*{\fileHomepage}{homepage}
 \newcommand*{\fileHomepageEmpty}{homepage-empty}
 \newcommand*{\fileNotifications}{notifications}
@@ -110,13 +110,13 @@
 \newcommand*{\AssetsPath}{../assets}%
 
 %% NEW COMMAND
-%% name of screenshot, caption, label
-\newcommand{\appscreenshot}[3]{
+%% name of screenshot, title, caption, label
+\newcommand{\appscreenshot}[4]{
 	\begin{figure}[ht!]%	
-	\label{#3}%
+	\label{#4}%
 	\includegraphics[width=4.4cm]{\AssetsPath/screenshots/#1}%
 	\centering%
-	\caption{#2}%	
+	\caption{\textbf{#2}: #3}%	
 	\end{figure}%
 }
 %%
@@ -153,7 +153,6 @@
 \tableofcontents
 
 \clearpage
-\section{List of Figures}
 \listoffigures
 
 % Manual
@@ -178,21 +177,21 @@ Events are managed by an event host that controls the event.  Each event has a q
 
 When opening \Friending{} for the first time you will be presented with \Screenshot{Start} (Figure~\ref{fig:start}).   If you have already signed in before then you will be taken to \Screenshot{Sign In} (Figure~\ref{fig:signin}):
 
-\appscreenshot{\fileStart}{Start}{fig:start}
+\appscreenshot{\fileStart}{Opening page}{Opening screen of the application}{fig:start}
 
 \Screenshot{Start} is the opening page for \Friending{}. It allows you to learn more about \Friending{} through a carousel.  Simply \action{tap} on the \keys{Start the tour} button, and you will be taken to \Screenshot{Onboarding} (Figure~\ref{fig:onboarding}).
 
-\appscreenshot{\fileOnboarding}{Onboarding}{fig:onboarding}
+\appscreenshot{\fileOnboarding}{Onboarding}{Introducing the application}{fig:onboarding}
 
 You can \action{Swipe Left} or \action{Swipe Right} to move through the descriptions to learn more about \Friending.  When you are ready to begin, \action{Tap} on the \keys{Continue} button.  You will be taken to \Screenshot{Sign Up} (Figure~\ref{fig:signup}).
 
 When you have successfully created your account or logged in, you will be presented with the \Screenshot{Home} (Figure~\ref{fig:home}):
 
-\appscreenshot{\fileHomepageEmpty}{The first run home page}{fig:homestart}
+\appscreenshot{\fileHomepageEmpty}{First Run}{The first run home page}{fig:newuser}
 
 When you are in the application you can use the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}) to quickly navigate throughout the application.  \action{Tap} on the \appbutton{menu} button to open the \Screenshot{Navigation Menu}.   The \Screenshot{Navigation Menu} is accessible on top level pages such as but not limited to: \Screenshot{Home} (Figure~\ref{fig:home}), \Screenshot{Groups} (Figure~\ref{fig:home}) and \Screenshot{My Questionnaires} (Figure~\ref{fig:home}).
 
-\appscreenshot{\fileNavigation}{Navigation Menu}{fig:navigation}
+\appscreenshot{\fileNavigation}{Navigation Menu}{The primary navigation method}{fig:navigation}
 
 The links will take you to the following locations:
 
@@ -208,7 +207,7 @@ The links will take you to the following locations:
 \item Sign out $\rightarrow$ Start Page (Figure 1.1).
 \end{itemize}
 
-\appscreenshot{\fileHomepage}{Home}{fig:home}
+\appscreenshot{\fileHomepage}{Home}{A populated home page}{fig:home}
 
 \clearpage
 \section{Conventions}
@@ -327,7 +326,7 @@ The remainder of this manual is organized based on use cases.  All Sections assu
 \label{sec:signup}
 To start using \Friending, create an account by opening the mobile application, \Friending. You will be presented with \Screenshot{Start} as shown in Figure~\ref{fig:start}. \action{Tap} on the \keys{Start the tour} button.
 
-\appscreenshot{\fileSignup}{Sign Up}{fig:signup}
+\appscreenshot{\fileSignup}{Sign Up}{Signing up as a new user}{fig:signup}
 
 Then, on \Screenshot{Sign Up} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email}, \textvar{name} and \textvar{password}.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
 
@@ -335,14 +334,14 @@ Then, on \Screenshot{Sign Up} (Figure~\ref{fig:signup}), \action{enter} your \te
 \label{sec:signin}
 On \Screenshot{\fileStart} (Figure~\ref{fig:signin}), tap the \keys{Sign In} button to start the sign in process.
 
-\appscreenshot{\fileSignin}{Sign In}{fig:signin}
+\appscreenshot{\fileSignin}{Sign In}{Signing in to your account}{fig:signin}
 
 On \Screenshot{Sign In} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email} and \textvar{password}.  Then, \action{tap} on the \keys{Sign In} button.  If you have forgotten your password, see section ~\ref{sec:reset}. 
 \subsection{Viewing your settings}
 \label{sec:settings}
 To view your settings, \action{tap} on the \keys{Settings} button in the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}). Once on \Screenshot{Settings} (Figure~\ref{fig:settings}), you will be able to review your settings. 
 
-\appscreenshot{\fileSettings}{Settings}{fig:settings}
+\appscreenshot{\fileSettings}{Settings}{Viewing your account settings}{fig:settings}
 \subsection{Updating your account details}
 \label{sec:account-update}
 To update your account details, \action{tap} on the \keys{Settings} button in the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}).  \action{Tap} on the \keys{Account} button as shown in (Figure~\ref{fig:navigation}).
@@ -357,10 +356,12 @@ Then, \action{enter} your \textvar{email address} in the \textcomp{Email Address
 
 You are encouraged to change your password after signing in with the one-time password.
 
-\appscreenshot{\fileReset}{Reset your password}{fig:reset}
+\appscreenshot{\fileReset}{Password Reset}{Reset your password}{fig:reset}
+
 \subsection{Deleting your account}
 \label{sec:account-delete}
-\appscreenshot{delete-account}{Delete account}{fig:accountdelete}
+\appscreenshot{\fileAccountDelete}{Account Deletion}{The warning dialog before you delete your account}{fig:accountdelete}
+
 To delete your account, \action{tap} on the \keys{Settings} button on the \Screenshot{Navigation Menu} (Figure~\ref{fig:navigation}).
 
 Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on the \keys{Delete Account} button.  You must agree to the deletion of your account in the \Screenshot{Confirmation Popup} (Figure~\ref{fig:accountdelete}). Your account will be deactivated and you will not receive any further matches or notifications during this period.  An email will be sent to notify you of your account deactivation and impending deletion.  Within 14 days your account will be permanently deleted along with all associated information.  If you sign in to your account within 14 days, your deletion request will be cancelled.  There is no way to recover a deleted account.
@@ -371,23 +372,23 @@ Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} o
 
 \subsection{Viewing your billing information}
 \label{sec:billing-view}
-\appscreenshot{\fileBilling}{Billing}{fig:billing}
+\appscreenshot{\fileBilling}{Billing}{Access to your billing information}{fig:billing}
 To view your account billing information, \action{tap} on the \keys{Settings} button on the \quicknav.
 Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on \keys{Billing} button, you will be presented with your current billing information (Figure~\ref{fig:billing}).   To download a copy of an invoice, \action{tap} on the \appbutton{invoice} button.  This will download a copy of an invoice to your device.  If any billing information is incorrect, see Section ~\ref{sec:troubleshoot} on troubleshooting.
 
 \subsection{Update your billing information}
 \label{sec:billing-update}
 
-\appscreenshot{\fileCredit}{Credit Information}{fig:credit}
+\appscreenshot{\fileCredit}{Payment Details}{Filling out credit card payment information}{fig:payment}
 To update account billing information, \action{tap} on the \keys{Settings} button on the \quicknav.  Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}), \action{tap} on the \keys{Billing} button, you will be presented with your current billing information (Figure~\ref{fig:billing}). 
  
-Then, while on \Screenshot{Billing} (Figure~\ref{fig:billing}), \action{tap} on the \appbutton{creditcard} button, you will be presented with your current credit card (Figure~\ref{fig:credit}).  \action{Enter} your changes to \textvar{First Name}, \textvar{Last Name}, \textvar{Card Number}, \textvar{Zip Code} and \textvar{Expiration Date} fields.  After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  
+Then, while on \Screenshot{Billing} (Figure~\ref{fig:billing}), \action{tap} on the \appbutton{creditcard} button, you will be presented with your current credit card (Figure~\ref{fig:payment}).  \action{Enter} your changes to \textvar{First Name}, \textvar{Last Name}, \textvar{Card Number}, \textvar{Zip Code} and \textvar{Expiration Date} fields.  After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  
 
 You will be emailed a confirmation that your billing information has been changed.  
 
 \subsection{Downloading your invoices}
 \label{sec:billing-invoices}
-\appscreenshot{\fileBillingNotification}{Billing Notifcation}{fig:billingnotify}
+\appscreenshot{\fileBillingNotification}{Billing Invoices}{Access to your billing invoices}{fig:invoices}
 
 \subsection{Paying for your account services}
 \label{sec:billing-paying}
@@ -402,27 +403,27 @@ You can see your billing information as specified in section ~\ref{sec:billing-v
 \subsection{Updating your profile}
 \label{sec:profile-update}
 
-\appscreenshot{\fileProfile}{Profile}{fig:profile}
+\appscreenshot{\fileProfile}{Profile}{Your profile page}{fig:profile}
 To update your personal profile information, \action{tap} on the \keys{Profile} button on the \quicknav. Then, while \Screenshot{Profile} (Figure~\ref{fig:profile}), \action{enter} your changes to \textvar{name}, \textvar{birthday}, \textvar{gender}, \textvar{orientation} and \textvar{description} fields.  You can tap on the \textcomp{Profile Image} to set your profile picture.  After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  
 \\\\
 The \textcomp{gender} field is limited to a binary choice of male and female.  The \textcomp{orientation} field is limited to Heterosexual, Bisexual, Homosexual.  See section ~\ref{sec:limitations} on the limitations of \Friending{} with respect to G\&SD.
 
 \subsection{Setting your notification preferences}
 \label{sec:profile-notify}
-\appscreenshot{\filePreferences}{Preferences}{fig:preferences}
+\appscreenshot{\filePreferences}{Preferences}{Your notification preferences}{fig:preferences}
 To view your notification preferences, \action{tap} on the \keys{Settings} button in the \quicknav. Then, while on \Screenshot{Settings} (Figure~\ref{fig:settings}),  \action{tap} on the \keys{Notifications} button, you will be presented with your notification settings.  On \Screenshot{Preferences} (Figure~\ref{fig:preferences}) you can see the types of notifications that \Friending{} will send. To toggle email notifications for a notification type, \action{tap} on the check box.  If email notifications is enabled, the email icon will appear filled.  If email notifications is disabled, the email icon will appear empty. After you are satisfied with your changes, \action{tap} on the \keys{Save} button to save your changes.  Email notifications cannot be disabled for billing statements and account notifications.
 
 \clearpage
 \section{Groups}
 \label{sec:groups}
-\appscreenshot{\fileFill}{Group Questionnaire}{fig:fill}
-\appscreenshot{\fileFilling}{Group Questionnaire Answering}{fig:filling}
-\appscreenshot{\fileGroupEdit}{Group Editting}{fig:groupedit}
-\appscreenshot{\fileGroupJoin}{Group Join}{fig:groupjoin}
-\appscreenshot{\fileGroup}{Group View}{fig:group}
-\appscreenshot{\fileGroups}{Groups}{fig:groups}
-\appscreenshot{\fileAnswer}{Submitted Questionnaire}{fig:answer}
-\appscreenshot{\fileAnswers}{Questionnaire Answers}{fig:answers}
+\appscreenshot{\fileFill}{Group Question}{A question in a group questionnaire}{fig:groupquestion}
+\appscreenshot{\fileFilling}{Group Questionnaire}{Your answers to the group questionnaire}{fig:groupquestionnaire}
+\appscreenshot{\fileGroupEdit}{Group Administration}{Administer changes to your group}{fig:groupadmin}
+\appscreenshot{\fileGroupJoin}{Group}{A group you could join}{fig:group}
+\appscreenshot{\fileGroup}{Group Home}{Check out a group, and the available questionnaires}{fig:grouphome}
+\appscreenshot{\fileGroups}{Groups}{A searchable view of the available groups}{fig:groups}
+\appscreenshot{\fileAnswer}{Question Answer}{Your answer to a questionnaire question}{fig:answer}
+\appscreenshot{\fileAnswers}{Questionnaire Answers}{View your answers to the questionnaire}{fig:answers}
 \subsection{Viewing groups}
 \label{sec:groups-view}
 
@@ -431,20 +432,20 @@ To view your notification preferences, \action{tap} on the \keys{Settings} butto
 
 \subsection{Joining a group}
 \label{sec:groups-join}
-To join a group, \action{tap} on the \keys{Group} button on the \quicknav.  Then, while on the \Screenshot{Groups} (Figure~\ref{fig:groups}), \action{enter} a \textvar{search query} into the search bar, you will be presented with groups matching your query.  Select the \textcomp{group} that matches your query to view \Screenshot{Group Details} (Figure~\ref{fig:group}).
+To join a group, \action{tap} on the \keys{Group} button on the \quicknav.  Then, while on the \Screenshot{Groups} (Figure~\ref{fig:groups}), \action{enter} a \textvar{search query} into the search bar, you will be presented with groups matching your query.  Select the \textcomp{group} that matches your query to view \Screenshot{Group Details} (Figure~\ref{fig:grouphome}).
 
 Then, while on the \Screenshot{Group Details} page, \action{tap} on the \keys{Join} button.  The group will be added to your \Screenshot{Home Page} (Figure~\ref{fig:home}).   
 
 \clearpage
 \section{Events}
 \label{sec:events}
-\appscreenshot{\fileEventEdit}{Event Edit}{fig:eventedit}
-\appscreenshot{\fileEventQuestionnaire}{Event Fill}{fig:eventfill}
-\appscreenshot{\fileEventEntered}{Event Filled In}{fig:eventfilled}
-\appscreenshot{\fileEventEntry}{Event Filling}{fig:eventfilling}
-\appscreenshot{\fileEventJoined}{Event Joined}{fig:eventjoined}
-\appscreenshot{\fileEvent}{Event}{fig:event}
-\appscreenshot{\fileEvents}{Events}{fig:events}
+\appscreenshot{\fileEventEdit}{Event Administration}{Administer changes to your event}{fig:eventadmin}
+\appscreenshot{\fileEventQuestionnaire}{Event Sign up}{Fill out the questionnaire when signing up for an event}{fig:eventsignup}
+\appscreenshot{\fileEventEntered}{Event Question}{Answer questions related to the event}{fig:eventquestion}
+\appscreenshot{\fileEventEntry}{Event Questionnaire}{Review your answers to the event questionnaire}{fig:eventquestionnaire}
+\appscreenshot{\fileEventJoined}{Joined Notification}{Review an event you have recently joined}{fig:joined}
+\appscreenshot{\fileEvent}{Event}{Check out the specifics of an event}{fig:event}
+\appscreenshot{\fileEvents}{Events}{A searchable view of the available events}{fig:events}
 
 \subsection{Joining an event}
 \label{sec:events-join}
@@ -452,7 +453,7 @@ The only way to join a event is to be invited to a event.  To view your invitati
 
 On the \Screenshot{Event View} page you can tap on the \keys{Join} button to join the event. This will mark your intentions to join the event - it does not guarantee that you will successfully join the event. See section ~\ref{sec:event-wait} for more details.   You may not be able to join a event based on your gender or sexual orientation, see section ~\ref{sec:event-req} for more details. You will receive a notification of your intention to join the event, visibile in your \Screenshot{Notifications} (Figure~\ref{fig:navigation}).   When you have successfully joined the event, you will see the event on your \Screenshot{Home} (Figure~\ref{fig:home}), in \Screenshot{Events} (Figure~\ref{fig:events}), and a notification in your \Screenshot{Notifications} (Figure~\ref{fig:notifications}).  
 
-If you no longer wish to join the event, you can cancel your pending request to join by revisiting the \Screenshot{Event View} page.  \action{Tap} the \keys{Pending} button to cancel your pending request (Figure~\ref{fig:eventjoined}).  Once you have successfully joined a event, you cannot leave the event.
+If you no longer wish to join the event, you can cancel your pending request to join by revisiting the \Screenshot{Event View} page.  \action{Tap} the \keys{Pending} button to cancel your pending request (Figure~\ref{fig:joined}).  Once you have successfully joined a event, you cannot leave the event.
 
 \subsection{Waiting to join an event}
 \label{sec:events-wait}
@@ -472,7 +473,7 @@ To view your events, \action{tap} on the \keys{Events} button on the \quicknav. 
 
 \subsection{Starting matching for events}
 \label{sec:events-starting}
-To host an event, \action{tap} on the \keys{Create Party} button on the \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Event Create} (Figure~\ref{fig:eventedit}). 
+To host an event, \action{tap} on the \keys{Create Party} button on the \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Event Create} (Figure~\ref{fig:eventadmin}). 
 
 On the Event Create page you can set the properties of the event.  \action{Enter} your changes to \textvar{Title}, \textvar{Capacity}, \textvar{Orientation}, and \textvar{Description} fields.  The \textcomp{Orientation} field is limited to Heterosexual, Bisexual, Gay, and Lesbian.  To set the questionnaire, see section ~\ref{sec:questionnaire-create}.  After you are satisfied with your changes, \action{tap} on the Create button to create your event.   You can now see your event on your \Screenshot{Home} (Figure~\ref{fig:home}) or on the Events page (Figure~\ref{fig:events}).
 
@@ -482,23 +483,23 @@ On the Event Create page you can set the properties of the event.  \action{Enter
 
 \subsection{Viewing a group}
 \label{sec:group-view}
-To view a group, \action{tap} on the \textcomp{group} that you wish to view on the \Screenshot{Home Page} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:group}). Then, while on the \Screenshot{Group Details}, \action{tap} on the \keys{View} button.  You will be presented with your \Screenshot{Group Home} (Figure~\ref{fig:home}).
+To view a group, \action{tap} on the \textcomp{group} that you wish to view on the \Screenshot{Home Page} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:grouphome}). Then, while on the \Screenshot{Group Details}, \action{tap} on the \keys{View} button.  You will be presented with your \Screenshot{Group Home} (Figure~\ref{fig:home}).
 
 \subsection{Leaving a group}
 \label{sec:group-leave}
-To leave a group, \action{tap} on the community that you wish to leave on \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:group}).  Then, while on \Screenshot{Group Details}, \action{tap} on the \keys{Leave} button.  The group will be removed from your \Screenshot{Home} (Figure~\ref{fig:home}).  If you wish to re-join the group, see section \ref{sec:groups-join}.
+To leave a group, \action{tap} on the community that you wish to leave on \Screenshot{Home} (Figure~\ref{fig:home}). This opens the \Screenshot{Group Details} (Figure~\ref{fig:grouphome}).  Then, while on \Screenshot{Group Details}, \action{tap} on the \keys{Leave} button.  The group will be removed from your \Screenshot{Home} (Figure~\ref{fig:home}).  If you wish to re-join the group, see section \ref{sec:groups-join}.
 
 \subsection{Creating your group}
 \label{sec:group-create}
 You can define your own group to discover yourself and others.  Within each group, you can create questionnaires that your members can fill out.  
 
-To create a group, \action{tap} on the create group button on \Screenshot{Home} (Figure~\ref{fig:home}).  This opens \Screenshot{Group Details} (Figure ~\ref{fig:group}).  You can edit the values as defined in section ~\ref{sec:group-update}.  When you are satisfied with your values, you can save the group, which creates the group.  The group will then be accessible from your \Screenshot{Home} (Figure~\ref{fig:home}) or the \Screenshot{Group Search} (Figure~\ref{fig:home}).
+To create a group, \action{tap} on the create group button on \Screenshot{Home} (Figure~\ref{fig:home}).  This opens \Screenshot{Group Details} (Figure ~\ref{fig:grouphome}).  You can edit the values as defined in section ~\ref{sec:group-update}.  When you are satisfied with your values, you can save the group, which creates the group.  The group will then be accessible from your \Screenshot{Home} (Figure~\ref{fig:home}) or the \Screenshot{Group Search} (Figure~\ref{fig:home}).
 
 \subsection{Updating your group}
 \label{sec:group-update}
-To edit a group you have created, navigate to \Screenshot{Group Admin} (Figure~\ref{fig:groupedit}) as described in section ~\ref{sec:group-view}.
+To edit a group you have created, navigate to \Screenshot{Group Admin} (Figure~\ref{fig:groupadmin}) as described in section ~\ref{sec:group-view}.
 
-Then, \action{tap} on the \keys{Manage} button and edit icons will appear next to the \textvar{Name} and \textvar{Description} fields (Figure~\ref{fig:groupedit}). These two fields are now editable. \action{Tap} on the field which you wish to edit and edit the value.  When you are satisfied with your changes, \action{tap} the \keys{Save} button.
+Then, \action{tap} on the \keys{Manage} button and edit icons will appear next to the \textvar{Name} and \textvar{Description} fields (Figure~\ref{fig:groupadmin}). These two fields are now editable. \action{Tap} on the field which you wish to edit and edit the value.  When you are satisfied with your changes, \action{tap} the \keys{Save} button.
 
 \subsection{Viewing your group questionnaires}
 \label{sec:group-questionnaire}
@@ -509,14 +510,14 @@ Then, \action{tap} on the \keys{Manage} button and edit icons will appear next t
 \clearpage
 \section{Questionnaires}
 \label{sec:questionnaires}
-\appscreenshot{\fileMatchingTypeOne}{Question Matching 1}{fig:questionmatch1}
-\appscreenshot{\fileMatchingTypeTwo}{Question Matching 2}{fig:questionmatch2}
-\appscreenshot{\fileQuestion}{Question-Editing}{fig:questionedit}
-\appscreenshot{\fileQuestionnaire}{Questionnaire-Details}{fig:questiondetails}
-\appscreenshot{\fileQuestions}{Questionnaire-Questions}{fig:questions}
-\appscreenshot{\fileQuestionnaires}{Questionnaires}{fig:questionnaires}
-\appscreenshot{\fileWeighting}{Question-Weighting}{fig:weighting}
-\appscreenshot{\fileCategories}{Categories}{fig:categories}
+\appscreenshot{\fileMatchingTypeOne}{Question Weights}{Set a weighting value for the answer options of a question}{fig:questionweight}
+\appscreenshot{\fileMatchingTypeTwo}{Option Weights}{Set weighting values for each answer option}{fig:optionweight}
+\appscreenshot{\fileQuestion}{Question}{Create a question for your questionnaire}{fig:question}
+\appscreenshot{\fileQuestionnaire}{Questionnaire}{Construct your questionnaire for an event or group}{fig:questionnaire}
+\appscreenshot{\fileQuestions}{Questions}{View the questions of your questionnaire}{fig:questions}
+\appscreenshot{\fileQuestionnaires}{Questionnaires}{Manage your questionnaires}{fig:questionnaires}
+\appscreenshot{\fileWeighting}{Weighting}{Weight answer options based on their importance}{fig:weighting}
+\appscreenshot{\fileCategories}{Categories}{Use categories to group similar questions}{fig:categories}
 \subsection{Filling out a questionnaire}
 \label{sec:questionnaire-fill}
 To fill out a questionnaire, tap on the questionnaire on the Group Home page (Figure 3.13). This opens the Questionnaire Overview page (Figure 3.14). 
@@ -561,8 +562,8 @@ To view your match notification, tap on the Notifications button on the Navigati
 
 On the Match Profile View page you can then contact the match through email.  At present \Friending{} only supports contacting matches through email.
 
-\appscreenshot{\fileMatch}{Match}{fig:match}
-\appscreenshot{\fileNotifications}{Notifications}{fig:notifications}
+\appscreenshot{\fileMatch}{Match}{View the profile of one of your match}{fig:match}
+\appscreenshot{\fileNotifications}{Notifications}{Manage your incoming notifications}{fig:notifications}
 
 \clearpage
 \section{Questionnaire Designs}
