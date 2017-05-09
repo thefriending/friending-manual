@@ -12,6 +12,7 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{verbatim}
 
 \usepackage{listings}
 \lstset{basicstyle=\ttfamily,frame=single,xleftmargin=3em,xrightmargin=3em}
@@ -21,8 +22,18 @@
 \AtBeginEnvironment{leftbar}{\sffamily\small}
 
 \usetikzlibrary{chains,arrows,shapes,positioning}
-\usepackage[hidelinks]{hyperref}
 
+% Metadata
+%
+% Setting the metadata of the document
+
+\usepackage[pdftex,
+			hidelinks,
+            pdfauthor={Jonathan Beverly},
+            pdftitle={Friending User Manual},
+            pdfsubject={Friending is an online dating, friendship, and social networking website that features member-created quizzes and multiple-choice questions.},
+            pdfkeywords={user manual, friending, application},
+            pdfcreator={jrbeverly}]{hyperref}
 %%%%
 %%%%
 %%%%
@@ -133,24 +144,36 @@
 
 \begin{document}
 
+% Title page
+%
+% The title page of the manual
+
 \begin{titlepage}
 	\centering
-	\includegraphics[width=100mm]{{"../assets/icons/friending-doc"}.png}\\
+	\includegraphics[width=100mm]{\AssetsPath/icons/icon.png}\\
 	\vspace{1.5cm}
-	{\huge\bfseries Friending User Guide\par}
+	{\huge\bfseries Friending User Manual\par}
 	\vspace{2cm}
-	{\Large\itshape Jonathan Beverly (\href{https://jrbeverly.gitlab.io/}{jrbeverly})\par}
+	{\Large\itshape Jonathan Beverly (\href{jrbeverly.me}{jrbeverly})\par}
 	\vfill
 	{\large\textbf{Abstract}\par}
 	\begin{paragraph} 
-	\Friending is an online dating, friendship, and social networking website that features member-created quizzes and multiple-choice questions.  The application is available for review at \href{https://jrbeverly-friending.gitlab.io/friending/}{Friending}. 
+	\Friending{} is an online dating, friendship, and social networking website that features member-created quizzes and multiple-choice questions.  
 	\end{paragraph}
 	\\\vspace{0.5cm}
 	{\large \today\par}
+	\vspace{0.25cm}
+	{\small Version \input{VERSION.txt}}
 \end{titlepage}
+
+% Table of Contents
+%
 
 \clearpage
 \tableofcontents
+
+% List of Figures
+%
 
 \clearpage
 \listoffigures
