@@ -1,9 +1,10 @@
 compile_pdf:
-  image: jrbeverly/latex:full
+  image: jrbeverly/latex:medium-privileged
   stage: build
   only: 
     - master
   script:
+    - sh build/provision.sh
     - sh build/build.sh
   artifacts:
     paths:
