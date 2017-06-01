@@ -54,4 +54,4 @@ This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci
 [friending-link]: https://jrbeverly-friending.gitlab.io/friending
 
 [manual-badge]: https://img.shields.io/badge/artifacts-view-red.svg?maxAge=2592000
-[manual-link]: https://gitlab.com/jrbeverly-friending/friending-manual/builds/artifacts/master/download?job=compile_pdf
+[manual-link]: https://gitlab.com/jrbeverly-friending/friending-manual/builds/artifacts/master/download?job=build
