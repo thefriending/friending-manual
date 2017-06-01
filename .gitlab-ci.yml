@@ -1,4 +1,16 @@
-compile_pdf:
+# ---------------------------------------
+# Global
+# ---------------------------------------
+
+stages:
+  - build
+  - deploy
+
+# ----------------------------------------
+# Build
+# ----------------------------------------
+
+build:
   image: jrbeverly/latex:medium-privileged
   stage: build
   only: 
@@ -9,10 +21,17 @@ compile_pdf:
   artifacts:
     paths:
       - manual.pdf
+    expire_in: 4 weeks
 
-trigger_build:
+# ----------------------------------------
+# Deploy
+# ----------------------------------------
+
+trigger_user_guide:
   stage: deploy
+  image: appropriate/curl:latest
   only: 
-    - master
+    - tags
+    - /^version-.*$/
   script:
     - "curl -X POST -F token=${ARTIFACT_TOKEN} -F ref=master ${GITLAB_URL}/api/v3/projects/${PROJECT_ID}/trigger/builds"
