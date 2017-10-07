@@ -215,3 +215,6 @@ TSWLatexianTemp*
 *.pdf
 output/
 doc/images/
+
+# Documentation:
+docs/**/images/
