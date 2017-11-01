@@ -1,0 +1,23 @@
+\section{Mutual Match}
+\label{sec:matching}
+\Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
+\begin{equation}
+(comparison score)_Question = COMP(A,B)*CAT(Q)*IMP(A)*IMP(A)*IMP(Q) 
+\end{equation}
+
+Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
+The compatibility score is computed from the comparison score of the questionnaire divided by the balanced comparison score for the questionnaire.  The balanced comparison score is $85\%$ of the best possible comparison score.
+
+A mutual match is defined as a match between two participants who have a compatibility score equal to or above the minimum match threshold.  
+
+\subsection{Comparison Score}
+\label{sec:score_comp}
+
+\subsection{Category}
+\label{sec:score_cat}
+
+\subsection{Importance}
+\label{sec:score_imp}
+
+\subsection{Question Importance}
+\label{sec:scoreq_qimp}
