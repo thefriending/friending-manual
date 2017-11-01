@@ -1,8 +1,9 @@
 \section{Mutual Match}
 \label{sec:matching}
 \Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
+
 \begin{equation}
-(comparison score)_Question = COMP(A,B)*CAT(Q)*IMP(A)*IMP(A)*IMP(Q) 
+(comparison score)_{Question}(Q, A_1, A_2) = COMP(A_1, A_2) * CAT(Q) * IMP(A_1) * IMP(A_2) * IMP(Q) 
 \end{equation}
 
 Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
@@ -13,11 +14,19 @@ A mutual match is defined as a match between two participants who have a compati
 \subsection{Comparison Score}
 \label{sec:score_comp}
 
+The comparison score contributes to the equation as $COMP(A_1, A_2)$ where $A_i$ is the answer submission by a user.
+
 \subsection{Category}
 \label{sec:score_cat}
+
+The category weighting contributes to the equation as $CAT(Q)$ where $Q$ is the question definition. From this question definition the weighting of the category can be returned using $\in [0, 1]$.
 
 \subsection{Importance}
 \label{sec:score_imp}
 
+The importance from the user is contributed to the equation as $IMP(A)$ where $A_i$ is the question definition. From this question definition the weighting set by the user can be returned with possible values $\in [ 0.0, 0.25, 0.5, 0.75, 1.0 ]$.
+
 \subsection{Question Importance}
 \label{sec:scoreq_qimp}
+
+The importance of a question contributes to the equation as $IMP(Q)$ where $Q$ is the question definition. From this question definition the importance of the question can be returned using $\in [ 0.0, 0.25, 0.5, 0.75, 1.0 ]$.
