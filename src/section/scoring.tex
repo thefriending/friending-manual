@@ -3,7 +3,7 @@
 \Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
 
 \begin{equation}
-(comparison score)_{Question}(Q, A_1, A_2) = COMP(A_1, A_2) * CAT(Q) * IMP(A_1) * IMP(A_2) * IMP(Q) 
+    CS(Q, A_1, A_2) = COMP(A_1, A_2) * CAT(Q) * IMP(A_1) * IMP(A_2) * IMP(Q) 
 \end{equation}
 
 Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
