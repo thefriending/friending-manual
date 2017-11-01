@@ -17,4 +17,3 @@ JOBNAME="${BIN_DIR}/manual"
 cd ${SRC_DIR}
 mkdir -p "${BIN_DIR}"
 latexmk -pdf -outdir=out manual.tex
-mv out/manual.pdf ../manual.pdf

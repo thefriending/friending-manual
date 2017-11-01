@@ -1,28 +1,41 @@
 \section{Mutual Match}
 \label{sec:matching}
 \Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
-
 \begin{equation}
-    CS(Q, A_1, A_2) = COMP(A_1, A_2) * CAT(Q) * IMP(A_1) * IMP(A_2) * IMP(Q) 
+    CS(Q, A_1, A_2) = COMP(A_1, A_2) * CAT(Q) * IMP(A_1) * IMP(A_2) * IMP(Q)
 \end{equation}
 
 Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
 The compatibility score is computed from the comparison score of the questionnaire divided by the balanced comparison score for the questionnaire.  The balanced comparison score is $85\%$ of the best possible comparison score.
 
-A mutual match is defined as a match between two participants who have a compatibility score equal to or above the minimum match threshold.  
+A mutual match is defined as a match between two participants who have a compatibility score equal to or above the minimum match threshold.
 
 \subsection{Comparison Score}
 \label{sec:score_comp}
 
-The comparison score contributes to the equation as $COMP(A_1, A_2)$ where $A_i$ is the answer submission by a user.
+The comparison score is computed by the function $COMP(A_1, A_2)$, which compares two user answers for a question. The matrix of comparison values is defined by the designer of the question. You can define this comparison matrix in the Question Builder as defined in section ~\ref{sec:matchcriteria}.
+
+For example, given the set of options: [ \textit{tofu}, \textit{salad}, \textit{pizza}, \textit{burgers} ], a matrix of comparison responses is defined below.
+
+\begin{center}
+    \begin{tabular}{ l c c c r }
+        & \textbf{tofu} & \textbf{salad} & \textbf{pizza} & \textbf{burgers} \\
+        \textbf{tofu} & 1 & 0.75 & 0.25 & 0 \\
+        \textbf{salad} & 0.5 & 0.75 & 0.75 & 0.5 \\
+        \textbf{pizza} & \underline{0.5} & 0.5 & 0.5 & 0.5 \\
+        \textbf{burgers} & 0 & 0.25 & 0.5 & 0.5 \\
+    \end{tabular}
+\end{center}
+
+The usage $COMP(tofu, pizza)$ maps to the column by $A_1$ (i.e. \textit{tofu}), and row by $A_2$ (i.e. \textit{pizza}). The evaluation of the function would then be as such: $COMP(tofu, pizza) = 0.5$.
 
 \subsection{Category}
-\label{sec:score_cat}
+\label{sec:score_category}
 
 The category weighting contributes to the equation as $CAT(Q)$ where $Q$ is the question definition. From this question definition the weighting of the category can be returned using $\in [0, 1]$.
 
 \subsection{Importance}
-\label{sec:score_imp}
+\label{sec:score_importance}
 
 The importance from the user is contributed to the equation as $IMP(A)$ where $A_i$ is the question definition. From this question definition the weighting set by the user can be returned with possible values $\in [ 0.0, 0.25, 0.5, 0.75, 1.0 ]$.
 
