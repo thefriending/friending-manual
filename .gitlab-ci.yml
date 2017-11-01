@@ -11,12 +11,11 @@ stages:
 # ----------------------------------------
 
 build:
-  image: jrbeverly/latex:medium-privileged
+  image: jrbeverly/latex:full
   stage: build
   only: 
     - master
   script:
-    - sh build/provision.sh
     - sh build/build.sh
   artifacts:
     paths:

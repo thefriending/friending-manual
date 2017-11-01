@@ -13,9 +13,6 @@ BIN_DIR="${ROOT_DIR}/output"
 # Build
 #
 # Build the latex project
-rm -rf ${BIN_DIR}
-mkdir -p ${BIN_DIR}
-cp ${SRC_DIR}/* ${BIN_DIR}/
-cd ${BIN_DIR}
+cd ${SRC_DIR}
 latexmk -pdf manual.tex
-mv manual.pdf ${ROOT_DIR}/
+mv manual.pdf ../manual.pdf

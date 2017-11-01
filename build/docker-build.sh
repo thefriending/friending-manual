@@ -18,4 +18,4 @@ fi
 
 docker run --rm -it \
         -v $(dirname $DIR):/media \
-        jrbeverly/friending-ci sh build/build.sh
+        jrbeverly/latex:full sh build/build.sh
