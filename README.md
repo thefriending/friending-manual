@@ -1,8 +1,4 @@
 # Friending Manual
-[![Build][build-badge]][build-link]
-[![License][license-badge]][license-link]
-[![Friending][friending-badge]][friending-link]
-[![Manual][manual-badge]][manual-link]
 
 ---
 
@@ -39,19 +35,3 @@ It is recommend to use the build scripts available in `build/`.   These scripts 
 ```console
 sh build/compile.sh
 ```
-
-### GitLab CI
-
-This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).  The build scripts are available in `build/`, which are used to compile the TeX file.
-
-[build-badge]: https://gitlab.com/jrbeverly-friending/friending-manual/badges/master/build.svg
-[build-link]: https://gitlab.com/jrbeverly-friending/friending-manual/commits/master
-
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000
-[license-link]: LICENSE
-
-[friending-badge]: https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000
-[friending-link]: https://jrbeverly-friending.gitlab.io/friending
-
-[manual-badge]: https://img.shields.io/badge/artifacts-view-red.svg?maxAge=2592000
-[manual-link]: https://gitlab.com/jrbeverly-friending/friending-manual/builds/artifacts/master/download?job=build
