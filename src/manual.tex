@@ -54,6 +54,8 @@
 \newcommand{\textui}[1]{{\fontfamily{pag}\selectfont#1}}
 \newcommand{\textaction}[1]{{\fontfamily{cmtt}\selectfont#1}}
 \newcommand{\textmath}[1]{{\fontfamily{zplm}\selectfont#1}}
+\newcommand{\textbutton}[1]{\keys{#1}}
+\newcommand{\textlink}[1]{\keys{#1}}
 
 %%%%
 %%%%
@@ -123,12 +125,12 @@
 %% NEW COMMAND
 %% name of screenshot, title, caption, label
 \newcommand{\appscreenshot}[4]{
-	\begin{figure}[ht!]%	
-	\label{#4}%
-	\includegraphics[width=4.4cm]{\AssetsPath/screens/#1}%
-	\centering%
-	\caption{\textbf{#2}: #3}%	
-	\end{figure}%
+	%\begin{figure}[ht!]%	
+	%\label{#4}%
+	%\includegraphics[width=4.4cm]{\AssetsPath/screens/#1}%
+	%\centering%
+	%\caption{\textbf{#2}: #3}%	
+	%\end{figure}%
 }
 %%
 
@@ -347,11 +349,11 @@ The remainder of this manual is organized based on use cases.  All Sections assu
 
 \subsection{Signing up for your account}
 \label{sec:signup}
-To start using \Friending, create an account by opening the mobile application, \Friending. You will be presented with \Screenshot{Start} as shown in Figure~\ref{fig:start}. \action{Tap} on the \keys{Start the tour} button.
+When you open \Friending, you will be presented with \Screenshot{Opening} (Figure~\ref{fig:start}). If it is your first time opening the application, you will need to \action{Tap} on the \textbutton{Start the tour} button, this will begin the tour on the page \Screenshot{Onboarding}. \action{Tap} on the \textbutton{Continue} button to move to the next step. If this is your first time running the \Friending application, you will be presented with the \Screenshot{Sign Up} page (Figure~\ref{fig:signup}).  If you have previously signed in on the current device, you will be presented with \Screenshot{Sign In} as shown in Figure~\ref{fig:signin}. If you are on the \Screenshot{Sign In} page, you will need to \action{Tap} on the \textlink{Sign Up} link beneath the button \keys{Sign Up}.
 
 \appscreenshot{\fileSignup}{Sign Up}{Signing up as a new user}{fig:signup}
 
-Then, on \Screenshot{Sign Up} (Figure~\ref{fig:signup}), \action{enter} your \textvar{email}, \textvar{name} and \textvar{password}.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Afterwards, \action{tap} on the \keys{Sign Up} button.
+Then, on \Screenshot{Sign Up} (Figure~\ref{fig:signup}), you will be able to fill in your details to sign up. \action{enter} your \textvar{email}, which is required to be a valid email such as \textvar{timmy@example.com}. \action{enter} you \textvar{name} as you would like it to appear on your profile.  \action{enter} your \textvar{password}, this is required to be at minimum 6 characters in length.  You should review the \textcomp{Terms of Service} and \textcomp{Privacy Policy} that define the expectations for you when using \Friending. Upon completion of the fields, you can \action{tap} on the \keys{Sign Up} button to complete the sign up process.  You will be presented with the \Screenshot{Homepage} page (Figure~\ref{fig:newuser}) upon successful completion of the sign up process.
 
 \subsection{Signing in to your account}
 \label{sec:signin}
