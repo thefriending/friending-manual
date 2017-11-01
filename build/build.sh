@@ -9,13 +9,12 @@ DIR="$(dirname $SCRIPT)"
 ROOT_DIR="$(dirname $DIR)"
 SRC_DIR="${ROOT_DIR}/src"
 BIN_DIR="${ROOT_DIR}/output"
+JOBNAME="${BIN_DIR}/manual"
 
 # Build
 #
 # Build the latex project
-rm -rf ${BIN_DIR}
-mkdir -p ${BIN_DIR}
-cp ${SRC_DIR}/* ${BIN_DIR}/
-cd ${BIN_DIR}
-latexmk -pdf manual.tex
-mv manual.pdf ${ROOT_DIR}/
+cd ${SRC_DIR}
+mkdir -p "${BIN_DIR}"
+latexmk -pdf -outdir=out manual.tex
+mv out/manual.pdf ../manual.pdf
