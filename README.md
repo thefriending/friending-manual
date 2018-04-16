@@ -1,7 +1,5 @@
 # Friending Manual
 
----
-
 ## Summary
 
 The Friending user manual provides info and tips to help you understand the mobile application.  The project is the actualization of a user vision and set of requirements to construct a matchmaking application.  The User Manual encodes these requirements as scenarios and use cases, while the Friending prototype presents a high-fidelity vision of the matchmaking application.
@@ -35,3 +33,9 @@ It is recommend to use the build scripts available in `build/`.   These scripts 
 ```console
 sh build/compile.sh
 ```
+
+## Acknowledgements
+
+The project icon is retrieved from [the Noun Project](docs/icon/icon.json). The original source material has been altered for the purposes of the project. The icon is used under the terms of the [Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+
+The project icon is by [Stefan Hartmann from the Noun Project](https://thenounproject.com/term/like/201300/).
