@@ -1,10 +1,34 @@
 \section{Limitations}
 \label{sec:limitations}
 
-\Friending{} has limitations with respect to \abbrevation{G\&SD}.  Section ~\ref{sec:eventmatch} specifies the creation of events, specifically mixers, that ensure a match for all participants upon completion.  A mixer currently supports Heterosexual, Bisexual, Gay, and Lesbian matches.  With limited match support, the current version of \Friending{} does not support all \abbrevation{G\&SD}.  A future version may support matches providing more inclusivity for \abbrevation{G\&SD} individuals.
+%% Sexuality
+%%
+\subsection{Sexuality}
+\label{sec:limit_sexuality}
 
-The following are limitations of \Friending{}:
+\Friending{} currently provides support for Heterosexual, Gay, and Lesbian matches. The current matching algorithm can only handle bipartite matching, resulting in minimal support for \abbrevation{G\&SD}. The matching algorithm is defined in Section ~\ref{sec:matching}, addressing the matchmaking requirements. With the current algorithm, individuals that are outside of the gender binary are unable to participant in a mixer, due to its unique matchmaking requirements. A mixer is a type of event that ensures a match for all participants upon completion.
+
+With limited match support, the current version of \Friending{} cannot be considered to fully support \abbrevation{G\&SD}. A future release may provide better matching support.
+
+%% Customization
+%%
+\subsection{Customization}
+\label{sec:limit_questions}
+
+User customization is limited to images, specifically the banner photos. \Friending{} has made the choice to limit user customization for the sake of uniformity, and encouraging simplicity in design. The \textbf{Group and Event Guidelines} document encourages users to attract potential participants using their photo. A captivating photo is great way to encourage others to join the community.
+
+The \Friending{} team deems this limitation essential to ensuring the application facilitates real-world action.
+
+%% Mobile Only
+%%
+\subsection{Mobile Only}
+\label{sec:limit_mobile}
+
+\Friending{} is built with a 'Mobile First' philosophy, driven by a vision for users to always have a chance to connect with their potential matches. This philosophy has trade-offs, which are listed below. These limitations are not ordered in any way.
+
 \begin{enumerate}
-\item You can only invite to an event by email address
-\item You can only invite to a group by email address
+\item Emphasis on email addresses and push notifications as primary forms of communication
+\item Billing and account services accessible only through the mobile application
+\item Limited support for all devices
+\item Limited screen resolution restricting \abbrevation{UX} options
 \end{enumerate}
