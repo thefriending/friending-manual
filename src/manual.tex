@@ -56,6 +56,8 @@
 \newcommand{\textmath}[1]{{\fontfamily{zplm}\selectfont#1}}
 \newcommand{\textbutton}[1]{\keys{#1}}
 \newcommand{\textlink}[1]{\keys{#1}}
+\newcommand{\textemail}[1]{{\textit{#1}}}
+\newcommand{\textsocial}[1]{{\textbf{#1}}}
 
 %%%%
 %%%%
@@ -71,50 +73,7 @@
 %%%%
 %%%%
 
-
-%%%% Assets - Screenshots
-%%%%
-%%%% The screenshots used in the application with commands to reference their filenames.
-\newcommand*{\fileSignup}{sign-up}
-\newcommand*{\fileSignin}{sign-in}
-\newcommand*{\fileStart}{start}
-\newcommand*{\fileSettings}{settings}
-\newcommand*{\fileReset}{reset}
-\newcommand*{\fileHomepage}{homepage}
-\newcommand*{\fileHomepageEmpty}{homepage-empty}
-\newcommand*{\fileNotifications}{notifications}
-\newcommand*{\filePreferences}{preferences}
-\newcommand*{\fileOnboarding}{onboarding}
-\newcommand*{\fileProfile}{profile}
-\newcommand*{\fileBilling}{billing}
-\newcommand*{\fileAccountDelete}{delete-account}
-\newcommand*{\fileNavigation}{navigation-menu}
-\newcommand*{\fileCredit}{credit-information}
-\newcommand*{\fileEventEdit}{event-edit}
-\newcommand*{\fileEventQuestionnaire}{event-fill}
-\newcommand*{\fileEventEntered}{event-filled-in}
-\newcommand*{\fileEventEntry}{event-filling}
-\newcommand*{\fileEventJoined}{event-joined}
-\newcommand*{\fileEvent}{event}
-\newcommand*{\fileEvents}{events}
-\newcommand*{\fileFill}{fill}
-\newcommand*{\fileFilling}{filling}
-\newcommand*{\fileGroupEdit}{group-edit}
-\newcommand*{\fileGroupJoin}{group-join}
-\newcommand*{\fileGroup}{group}
-\newcommand*{\fileGroups}{groups}
-\newcommand*{\fileAnswer}{answer}
-\newcommand*{\fileAnswers}{answers}
-\newcommand*{\fileBillingNotification}{billing-notifcation-pop}
-\newcommand*{\fileMatchingTypeOne}{question-matching-1}
-\newcommand*{\fileMatchingTypeTwo}{question-matching-2}
-\newcommand*{\fileQuestion}{question-editing}
-\newcommand*{\fileQuestionnaire}{questionnaire-details}
-\newcommand*{\fileQuestions}{questionnaire-questions}
-\newcommand*{\fileQuestionnaires}{questionnaires}
-\newcommand*{\fileWeighting}{question-weighting}
-\newcommand*{\fileCategories}{categories}
-\newcommand*{\fileMatch}{match}
+\input{includes/assets.tex}
 
 \newcommand\appSignUp{Sign Up}
 %%%%
@@ -126,11 +85,31 @@
 \newcommand{\appscreenshot}[4]{
 	\begin{figure}[ht!]
 	\label{#4}
-	\includegraphics[width=4.4cm]{assets/screens/#1}
+	\includegraphics[width=2.4cm]{assets/screens/#1}
 	\centering
 	\caption{\textbf{#2}: #3}
 	\end{figure}
 }
+
+\newcommand{\appscreen}[2]{	
+	\includegraphics[width=0.9\textwidth]{assets/screens/#1}
+    \caption{\textbf{#2}}
+}
+
+\newcommand{\appscreens}[2]{
+	\begin{figure}[ht!]
+		\centering
+		\begin{minipage}{0.36\textwidth}
+			\centering
+			#1
+		\end{minipage}\hfill
+		\begin{minipage}{0.36\textwidth}
+			\centering
+			#2
+		\end{minipage}
+	\end{figure}
+}
+
 %%
 
 \newcommand{\appbutton}[1]{
@@ -191,5 +170,5 @@
 \clearpage\input{section/matching.tex}
 \clearpage\input{section/troubleshooting.tex}
 \clearpage\input{section/limitations.tex}
-
+\clearpage\input{section/screenshots.tex}
 \end{document}
