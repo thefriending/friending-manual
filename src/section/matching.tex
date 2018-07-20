@@ -1,14 +1,5 @@
-\section{Mutual Match}
+\section{Matching}
 \label{sec:matching}
-\Friending{} employs a matchmaking algorithm that creates a mutual match between participants after submitting their questionnaires.  \Friending{} does this by computing the comparison score of $Q \in Questions$ and $A,B \in Answers-to-Q$:
-\begin{equation}
-(comparison score)_Question = COMP(A,B)*CAT(Q)*IMP(A)*IMP(A)*IMP(Q) 
-\end{equation}
-
-Where IMP is the importance rating from 1 to 3, CAT is the category weighting and COMP is the comparison as defined in section 4.5.5.   The comparison score for a questionnaire is then calculated based on the summation of the comparison score for all questions and their associated answers.
-The compatibility score is computed from the comparison score of the questionnaire divided by the balanced comparison score for the questionnaire.  The balanced comparison score is $85\%$ of the best possible comparison score.
-
-A mutual match is defined as a match between two participants who have a compatibility score equal to or above the minimum match threshold.  
 
 \subsection{Group Matching}
 \label{sec:groupmatch}
@@ -16,8 +7,8 @@ A mutual match is defined as a match between two participants who have a compati
 
 \subsection{Event Matching}
 \label{sec:eventmatch}
-\Friending{} makes use a standard solution to the Stable Roommate Problem.
+\Friending{} works to enable mutual match by starting with design elements that can be used to express matching parameters. By first providing access to a variety of methods to define a match. Category weighting, question importance, answer score comparison. These design decisions help ensure that a questionnaire is able to balance the matching desires of the questionnaire designer and users.
 
-Events are.
+When a questionnaire is submitted, \Friending{} compares each of the question responses. The primary factor is the comparison score which is based on comparing the two answers of the questionnaire. The question multipliers are then considered. This would be the question important, user importance and the overall category. These values are used to compute a comparison score. A score that is used by the matchmaking algorithm to determine a mutual match.
 
-Mixers are.
+A mutual match is match with both parties satisfied but each part of the computer the match differently. These methods are covered in section a and section b.

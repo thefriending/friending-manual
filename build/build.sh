@@ -16,5 +16,5 @@ JOBNAME="${BIN_DIR}/manual"
 # Build the latex project
 cd ${SRC_DIR}
 mkdir -p "${BIN_DIR}"
-latexmk -pdf -outdir=out manual.tex
+latexmk -pdf -f -outdir=out manual.tex
 mv out/manual.pdf ../manual.pdf
