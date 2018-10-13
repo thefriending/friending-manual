@@ -91,7 +91,8 @@
 	\end{figure}
 }
 
-\newcommand{\appscreen}[2]{	
+\newcommand{\appscreen}[3]{
+	\label{#3}
 	\includegraphics[width=0.9\textwidth]{assets/screens/#1}
     \caption{\textbf{#2}}
 }
@@ -171,5 +172,5 @@
 \clearpage\input{section/matching.tex}
 \clearpage\input{section/troubleshooting.tex}
 \clearpage\input{section/limitations.tex}
-% \clearpage\input{section/screenshots.tex}
+\clearpage\input{section/screenshots.tex}
 \end{document}
