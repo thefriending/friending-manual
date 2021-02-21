@@ -1,0 +1,21 @@
+{
+  "slug": "manual",
+  "namespace": "thefriending",
+  "status": "archived",
+  "icon": "icon.svg",
+  "license": {
+    "type": "MIT",
+    "content": "Jonathan Beverly <jrbeverly>"
+  },
+  "topics": [
+    "latex",
+    "user-manual",
+    "gitlab-ci",
+    "specification"
+  ],
+  "languages": [
+    "PowerShell",
+    "Shell",
+    "TeX"
+  ]
+}
