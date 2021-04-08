@@ -1,0 +1,17 @@
+slug: manual
+description: The Friending user manual provides info and tips to help you understand the mobile application.
+project: thefriending
+namespace: spec
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2017
+topics: |-
+  [
+    "latex",
+    "user-manual",
+    "gitlab-ci",
+    "specification"
+  ]
